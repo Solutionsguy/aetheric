@@ -1,0 +1,1069 @@
+@import "mixins";
+
+/*----------------------------------------*/
+/*  Dark theme   
+/*----------------------------------------*/
+
+.dark-icon {
+    display: none;
+}
+
+.dashboard-bg,
+.auth-body {
+    &.dark-theme {
+        background: linear-gradient(108.51deg, #0B0F2C 1.88%, #050611 98.3%);
+    }
+}
+
+.dark-theme {
+    .dark-icon {
+        display: block;
+    }
+
+    // short code css
+    .black-color {
+        color: $white;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: $white;
+    }
+
+    p {
+        color: rgba($white, $alpha: .7);
+    }
+
+    // site Badge
+    .site-badge {
+        &.badge-success {
+            background: rgba(0, 190, 86, 0.15);
+            color: #00BE56;
+        }
+
+        &.badge-failed {
+            background: rgba(243, 65, 65, 0.15);
+            color: $danger;
+        }
+
+        &.badge-pending {
+            background: rgba(246, 191, 48, 0.15);
+            color: #F6BF30;
+        }
+
+        &.badge-primary {
+            background: rgba($primary, $alpha: 0.2);
+            color: $primary;
+        }
+    }
+
+    // color css
+    .black-color {
+        color: $white;
+    }
+
+    .primary .dark-icon {
+        display: block;
+    }
+
+    .light-icon {
+        display: none;
+    }
+
+    .sidebar-wrapper {
+        background: $liberty-blue;
+        box-shadow: 4px 0px 55px rgba(86, 58, 239, 0.04);
+    }
+
+    .user-sidebar {
+        .site-logo {
+            background: $liberty-blue;
+            border-bottom: 1px solid rgba($color: $white, $alpha: .08);
+        }
+    }
+
+    // Sidebar toggle 
+    .toggle-sidebar {
+        background: $liberty-blue;
+
+        // bar icon
+        .bar-icon {
+            span {
+                background: $white;
+            }
+        }
+    }
+
+    .page-wrapper {
+        &.compact-wrapper {
+            .page-body-wrapper {
+                .back-btn {
+                    background: $tristesse;
+                    box-shadow: none;
+                    border-radius: 50%;
+                    border: 1px solid $border-primary;
+                }
+            }
+        }
+    }
+
+    .Checkbox {
+        &>input {
+            &:hover {
+                &+.Checkbox-visible {
+                    border-color: $primary;
+                }
+            }
+        }
+    }
+
+    .Checkbox-visible {
+        background: transparent;
+        border-color: $primary;
+
+        &:hover {
+            border-color: $primary;
+        }
+    }
+
+    // modal style cs
+    .site-fund-transfer-modal,
+    .withdraw-add-modal,
+    .withdraw-modal,
+    .create-ticket-modal,
+    .withdraw-modal,
+    .profile-delete-modal {
+        .modal-content {
+            background: $liberty-blue;
+        }
+    }
+
+    .modal-content-wrapper {
+        .fund-transfer-list {
+            border-color: rgba($color: $white, $alpha: .1);
+
+            ul {
+                li {
+                    .info {
+                        color: rgba($color: $white, $alpha: .6);
+                    }
+                }
+            }
+        }
+    }
+
+    .modal-content-wrapper {
+        &>.title {
+            border-color: rgba($color: $white, $alpha: .1);
+        }
+    }
+
+    .modal-list-content .modal-list-info .list-item {
+        color: rgba($color: $white, $alpha: .6);
+    }
+
+    .withdraw-modal {
+        .bottom-content {
+            .description {
+                color: rgba($white, $alpha: .7);
+            }
+
+            .transaction {
+                color: rgba($white, $alpha: .7);
+            }
+        }
+    }
+
+    .page-header {
+        background-color: #090c24;
+    }
+
+    .header-primary {
+        &.header-auth {
+            &.active-sticky {
+                background: #1a1e39 !important;
+            }
+        }
+    }
+
+    .dashboard-header {
+        border-bottom: 1px solid rgba($color: $white, $alpha: .08);
+    }
+
+    // site card style
+    .site-card {
+        background: $liberty-blue;
+        box-shadow: none;
+    }
+
+    .site-card-title {
+        color: $white;
+    }
+
+    .user-profile-drop {
+        .dropdown-menu {
+            background-color: $night-wave;
+            filter: drop-shadow(0px 0px 12px rgba(0, 0, 0, 0.08));
+        }
+
+        .user-logout {
+            border-top: 1px solid rgb(245 245 245 / 8%);
+        }
+
+        .info-list {
+            border-color: rgba(245, 245, 245, 0.08);
+
+            .content {
+                .icon {
+                    i {
+                        color: rgba($white, $alpha: .7);
+                    }
+                }
+
+                .info {
+                    a {
+                        color: rgba($white, $alpha: .7);
+                    }
+                }
+            }
+        }
+    }
+
+    // notification styles
+    .notification-popup {
+        background-color: $night-wave;
+    }
+
+    .header-notifications {
+        &>.title {
+            color: $white;
+            border-color: rgba($color: $white, $alpha: .1);
+        }
+    }
+
+    .notifications-item {
+        background: $liberty-blue;
+        border: 1px solid rgba(173, 171, 168, 0.1);
+    }
+
+    .notification-list {
+        .content {
+            .title {
+                color: rgba($white, $alpha: .7);
+            }
+
+            .meta {
+                span {
+                    color: rgba($white, $alpha: .7);
+                }
+            }
+        }
+    }
+
+    .header-right-content {
+        .language-box {
+            .header-lang-item {
+                &>span {
+                    color: #B4B5BA;
+                }
+            }
+        }
+
+        .user-action {
+            &>ul {
+                li {
+                    .notification-box {
+                        .icon {
+                            color: #B4B5BA;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // dropdown
+    .dropdown-menu {
+        background-color: #07091B;
+        box-shadow: none;
+    }
+
+    .filter-dropdown {
+        .title {
+            border-color: rgba($color: $white, $alpha: .06);
+        }
+    }
+
+    // dashboard css
+    .dashboard-card {
+        .single-card {
+            .number {
+                color: $white;
+            }
+
+            .info-title {
+                color: $white;
+            }
+
+            .description {
+                color: rgba($white, $alpha: .7);
+            }
+        }
+    }
+
+    .user-sidebar {
+        .user-nav {
+            ul {
+                li {
+                    &.active {
+                        a {
+                            color: $warning;
+                            background-color: rgba(255, 172, 62, 0.1);
+
+                            &:before {
+                                background-color: $warning;
+                            }
+
+                            span {
+                                color: rgba(255, 172, 62, 1);
+                            }
+
+                            i {
+                                color: $warning;
+                            }
+                        }
+                    }
+
+                    a {
+                        .count-number {
+                            background-color: rgba(255, 172, 62, 0.2);
+                            color: rgba(255, 172, 62);
+                        }
+
+                        span,
+                        i {
+                            color: rgba($color: $white, $alpha: .6);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .site-custom-table {
+        .contents {
+            .site-table-head {
+                .site-table-col {
+                    color: rgba($color: $white, $alpha: 0.6);
+                    border-color: rgba($color: $white, $alpha: 0.06);
+                }
+            }
+
+            .site-table-list {
+                .site-table-col {
+                    border-color: rgba($color: $white, $alpha: 0.06);
+
+                    .found-history-description {
+                        .content {
+                            .date {
+                                font-size: 12px;
+                                color: rgba($color: $white, $alpha: .6);
+                            }
+                        }
+                    }
+
+                    .body-text {
+                        color: rgba($color: $white, $alpha: .6);
+                    }
+
+                    .description {
+                        .content {
+                            .title {
+                                color: $white;
+                            }
+
+                            .date {
+                                font-size: 12px;
+                                font-weight: 600;
+                                color: rgba($color: $white, $alpha: .6);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Pricing css
+    .pricing-item {
+        background: #080B1F;
+        border: 1px solid $border-primary;
+
+        &.popular-plan {
+            .price-btn {
+                .site-btn {
+                    background-color: $warning;
+                    color: $heading;
+                    opacity: 0.65;
+                }
+            }
+        }
+
+        .price-value {
+            strong {
+                color: $white;
+            }
+
+            sub {
+                color: rgba($white, $alpha: .7);
+            }
+        }
+    }
+
+    .subscriptions-terms-content {
+        .list-content {
+            ul {
+                li {
+                    color: rgba($white, $alpha: .7);
+
+                    &::before {
+                        background-color: rgba($white, $alpha: .7);
+                    }
+                }
+            }
+        }
+    }
+
+    // Add found css
+    .add-gateway,
+    .support-ticket-form-grid {
+        background: $tristesse;
+        border: 1px solid $border-primary;
+    }
+
+    .select-gateway {
+        .select-gateway-item {
+            background: $tristesse;
+        }
+    }
+
+    .select-gateway {
+        .label-radio {
+            span {
+                color: $primary;
+            }
+        }
+    }
+
+    .add-found-details {
+        background: $tristesse;
+
+        .list {
+            ul {
+                li {
+                    .info {
+                        color: rgba($color: $white, $alpha: .6);
+
+                        &:first-child {
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .fund-transfer-history-field {
+        background: #080A1E;
+        border: 1px solid rgba($white, $alpha: 0.1);
+    }
+
+    .add-gateway-thumb {
+        background-color: $liberty-blue;
+    }
+
+    // Input field style
+    .single-input {
+        .input-label {
+            color: $white;
+        }
+
+        &.has-left-icon {
+            .icon {
+                color: rgba($white, $alpha: .7);
+            }
+        }
+    }
+
+    .input-field {
+        input {
+            background: $tristesse;
+            color: rgba($white, $alpha: .7);
+            border-color: $border-primary;
+
+            &:focus {
+                border-color: $purplish-blue-2;
+            }
+
+            &::placeholder {
+                color: rgba($white, $alpha: .7);
+            }
+        }
+
+        &.input-group {
+            .input-group-text {
+                background: $tristesse;
+                border-color: $border-primary;
+                color: rgba($white, $alpha: .7);
+            }
+        }
+
+        .password {
+            filter: invert(1);
+        }
+
+        textarea {
+            background: $tristesse;
+            color: rgba($white, $alpha: .7);
+            border-color: $border-primary;
+        }
+    }
+
+    // Nice select
+    .input-select {
+        .nice-select {
+            background-color: $tristesse;
+            border-color: $border-primary;
+
+            &:after {
+                border-color: rgba($white, $alpha: .7);
+            }
+
+            .current {
+                color: rgba($white, $alpha: .7);
+            }
+
+            .list {
+                background-color: $tristesse;
+            }
+
+            .option {
+                color: rgba($white, $alpha: .7);
+
+                &:hover {
+                    background-color: $liberty-blue;
+                }
+
+                &.selected {
+                    &.focus {
+                        background-color: $liberty-blue;
+                    }
+                }
+            }
+        }
+    }
+
+    .single-input {
+        .text-content {
+            .text {
+                color: $warning;
+            }
+        }
+    }
+
+    .upload-custom-file {
+        &.without-image {
+            label {
+                background-color: $tristesse;
+
+                span {
+                    color: rgba($white, $alpha: .7);
+                }
+            }
+        }
+    }
+
+    // file-upload
+    .file-upload-wrap {
+        .input-label {
+            color: $white;
+        }
+    }
+
+    input[type="radio"] {
+        &~label {
+            color: rgba($white, $alpha: .7);
+
+            &::before {
+                background-color: transparent;
+            }
+        }
+    }
+
+    // time
+    .ui-timepicker-standard {
+        background-color: $tristesse;
+        box-shadow: none;
+        border: 1px solid $border-primary;
+
+        a {
+            color: rgba($color: $white, $alpha: .5);
+        }
+
+        .ui-state-hover {
+            background-color: $liberty-blue;
+            color: $white;
+        }
+    }
+
+    // Button Steps
+    .ads-step {
+        .ads-step-inner {
+            background: rgba($color: $white, $alpha: .1);
+
+            .step-btn {
+                color: $white;
+            }
+        }
+    }
+
+    // Create Ads css
+    .add-schedule-inputs {
+        background: $tristesse;
+    }
+
+    .add-schedule-top {
+        .content {
+            .description {
+                color: $white;
+            }
+        }
+    }
+
+    // table style css
+    .table>:not(caption)>*>* {
+        background-color: $liberty-blue;
+        color: $white;
+    }
+
+    .table-pagination {
+        .content {
+            p {
+                color: $white;
+            }
+        }
+    }
+
+    .basic-pagination {
+        ul {
+            li {
+                a {
+                    color: #9B9BA0;
+
+                    &:hover {
+                        background-color: $primary;
+                        color: $white;
+                    }
+                }
+
+                .current {
+                    background-color: rgba($color: $white, $alpha: .1);
+                    color: $white;
+                }
+            }
+        }
+    }
+
+    .my-ads-fields-wrapper {
+        background: #080A1D;
+        border: 1px solid rgba($white, $alpha: 0.1);
+
+        .site-btn {
+            background-color: $primary;
+            color: $white;
+        }
+
+        .input-field {
+            input {
+                background: $liberty-blue;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+            }
+        }
+
+        .input-select {
+            .nice-select {
+                background: $liberty-blue;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+            }
+        }
+    }
+
+    // site table css
+    .site-table {
+        .table {
+            &>thead {
+                &>tr {
+                    &>th {
+                        color: rgba($color: $white, $alpha: .6);
+                        border-color: rgba($color: $white, $alpha: .06);
+                    }
+                }
+            }
+        }
+    }
+
+    .transactions-filed-wrapper,
+    .withdraw-history-form {
+        background: #080A1E;
+        border: 1px solid rgba($white, $alpha: 0.1);
+
+        .input-field {
+            input {
+                background: $liberty-blue;
+                border: 1px solid rgba($white, $alpha: 0.1);
+            }
+        }
+
+        .input-select {
+            .nice-select {
+                background: $liberty-blue;
+                border: 1px solid rgba($white, $alpha: 0.1);
+            }
+        }
+
+        .site-btn {
+            &.black-btn {
+                background-color: $warning;
+                color: $heading;
+            }
+        }
+    }
+
+    // referral style css
+    .referral-share-item {
+        background: $liberty-blue;
+        box-shadow: none;
+    }
+
+    .referral-user {
+        .content {
+            .description {
+                color: $white;
+            }
+        }
+    }
+
+    // withdraw style css
+    .withdraw-item-wrapper {
+        background: $tristesse;
+    }
+
+    // profile setting
+    .profile-info-content {
+        .content {
+            .title {
+                color: $white;
+            }
+        }
+    }
+
+    .two-factor-auth-wrapper {
+        background: $liberty-blue;
+
+        .qr-code {
+            .white-qr-img {
+                display: block;
+            }
+
+            .dark-qr-img {
+                display: none;
+            }
+        }
+    }
+
+    .otp-form {
+        .inputs {
+            .verification {
+                input {
+                    color: $white;
+                }
+            }
+        }
+    }
+
+    .action-checkbox-item {
+        background: $tristesse;
+        border: 1px solid rgba(173, 171, 168, 0.1);
+    }
+
+    // support style css
+    .support-ticket-form-grid {
+        .input-select {
+            .nice-select {
+                background: $liberty-blue;
+                border: 0;
+            }
+        }
+
+        .input-field {
+            input {
+                background: $liberty-blue;
+                border: 0;
+            }
+        }
+
+        .site-btn {
+            &.black-btn {
+                background: $liberty-blue;
+            }
+        }
+    }
+
+    .support-tickets-aviator {
+        .contents {
+            .info {
+                color: rgba($white, $alpha: .5);
+            }
+        }
+    }
+
+    .support-tickets-card {
+        background-color: rgb(31 31 31 / 80%);
+
+        .salutation {
+            color: rgba($color: $white, $alpha: 1);
+        }
+
+        .message-body {
+            color: rgba($color: $white, $alpha: 1);
+        }
+
+        .message-footer {
+            .regards {
+                color: rgba($color: $white, $alpha: 1);
+            }
+
+            .email {
+                color: rgba($color: $white, $alpha: 0.6);
+            }
+        }
+
+        .message-attachments {
+            .title {
+                color: rgba($color: $white, $alpha: 1);
+            }
+        }
+
+        .single-attachment {
+            .attach {
+                color: rgba($color: $white, $alpha: 0.6);
+            }
+        }
+    }
+
+    .notifications-right-content {
+        .notifications-link {
+            .site-btn {
+                background: rgba($white, $alpha: 0.1);
+                color: $white;
+            }
+        }
+    }
+
+    // Authentication style css
+    .auth-wrapper {
+        .contents-inner {
+            .content {
+                background-color: $liberty-blue;
+                box-shadow: none;
+
+                .forgot {
+                    border-color: rgba($color: $white, $alpha: .1);
+
+                    a {
+                        color: $warning;
+                    }
+                }
+
+                .have-acount {
+                    p {
+                        a {
+                            color: $warning;
+                        }
+                    }
+                }
+
+                .account-steps {
+                    .single-step {
+                        .line {
+                            background: rgba($color: $warning, $alpha: .20);
+                        }
+
+                        &.active {
+                            .line {
+                                background: $warning;
+                            }
+
+                            .description {
+                                color: $warning;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .terms-user {
+            p {
+                a {
+                    color: $warning;
+                }
+            }
+        }
+    }
+
+    .custom-checkbox {
+        .cbx {
+            span {
+                &:last-child {
+                    color: rgba($white, $alpha: .7);
+                }
+            }
+        }
+    }
+
+    .header-lang-item {
+        &>span {
+            color: rgba($white, $alpha: .7);
+        }
+    }
+
+    // footer css
+    .dashboard-footer-area {
+        .need-content {
+            .description {
+                a {
+                    color: $warning;
+                }
+            }
+        }
+    }
+
+    // Ads style css
+    .ads-single-item {
+        background-color: #080B20;
+
+        .title {
+            color: $white;
+        }
+
+        .btn-wrap {
+            .site-btn {
+                background-color: $primary;
+            }
+        }
+    }
+
+    // alert styles
+    .identity-alert {
+        .contents {
+            .head {
+                color: $white;
+            }
+
+            .content {
+                color: rgba($white, $alpha: .7);
+
+                small,
+                strong {
+                    color: rgba($white, $alpha: .7);
+                }
+            }
+        }
+    }
+
+    // advertisement card
+    .advertisement-card {
+        background-color: #080A1D;
+
+        .count {
+            background: #080A1D;
+            border: 1px solid rgba($white, $alpha: 0.1);
+            box-shadow: 0px 1px 8px rgba($black, $alpha: 0.05);
+        }
+
+        .advertisement-calc {
+            background: $liberty-blue;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+    }
+
+    .progress-advertisement-item {
+        .progress-count {
+            color: $white;
+        }
+    }
+
+    .social-sign-btn {
+        background: $tristesse;
+        color: rgba($white, $alpha: .7);
+        border-color: $border-primary;
+    }
+
+    .ads-single-item.style-two {
+        .title {
+            color: $white;
+        }
+    }
+
+    .withdraw-area {
+        .button-inner {
+            border-top: 1px solid rgba($white, $alpha: .08);
+
+            .input-btn-wrap {
+                .site-btn {
+                    &.black-btn {
+                        background-color: $warning;
+                        color: $heading;
+                    }
+                }
+            }
+        }
+    }
+
+    .select2-container--default {
+        .select2-selection--single {
+            border: 1px solid rgba($white, $alpha: 0.3);
+            background-color: $tristesse;
+
+            .select2-selection__rendered {
+                color: rgba($white, $alpha: 0.7);
+            }
+
+            &:focus {
+                border: 1px solid rgba($white, $alpha: 0.5);
+            }
+        }
+
+        .select2-search--dropdown {
+            .select2-search__field {
+                border: 1px solid rgba($white, $alpha: 0.4);
+                background: $heading;
+                color: $white;
+            }
+        }
+    }
+
+    .select2-dropdown {
+        background: $heading;
+        border: 1px solid rgba($white, $alpha: 0.4);
+    }
+
+    .select2-results__option--selectable {
+        color: rgba($white, $alpha: 0.7);
+    }
+}
