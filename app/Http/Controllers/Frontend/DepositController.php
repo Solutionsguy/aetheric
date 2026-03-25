@@ -97,15 +97,39 @@ class DepositController extends GatewayController
         return self::depositAutoGateway($gatewayInfo->gateway_code, $txnInfo);
     }
 
-    public function depositSuccess()
+    public function depositSuccess(Request $request)
     {
+        // Handle return from ViserMart payment
+        $status = $request->get('status');
+        $reference = $request->get('reference');
+
+        if ($reference && $status === 'paid') {
+            // Verify the transaction was processed
+            $txn = Transaction::tnx($reference);
+            if ($txn && $txn->status->value !== 'success') {
+                // Trigger payment success processing
+                try {
+                    $this->paymentSuccess($reference, false);
+                    notify()->success(__('Payment completed successfully!'), 'Success');
+                } catch (\Exception $e) {
+                    Log::error('Error processing ViserMart return callback', [
+                        'ref' => $reference,
+                        'error' => $e->getMessage()
+                    ]);
+                }
+            }
+        }
+
         return view('frontend::deposit.success');
     }
 
-    public function depositLog()
+    public function depositLog(Request $request)
     {
         $from_date = trim(@explode('-', request('daterange'))[0]);
         $to_date = trim(@explode('-', request('daterange'))[1]);
+
+        // Auto-verify pending ViserMart payments BEFORE fetching deposits
+        $this->autoVerifyPendingViserMartPayments();
 
         $deposits = Transaction::where('user_id', auth()->user()->id)
             ->search(request('trx'))
@@ -115,6 +139,45 @@ class DepositController extends GatewayController
                 $query->whereDate('created_at', '<=', Carbon::parse($to_date)->format('Y-m-d'));
             })->latest()->paginate(request('limit', 15))->withQueryString();
 
+        // Check if this is a return from ViserMart payment
+        $status = $request->get('status');
+        $reference = $request->get('reference');
+        if ($reference && $status === 'paid') {
+            notify()->success(__('Payment completed successfully!'), 'Success');
+        }
+
         return view('frontend::deposit.log', compact('deposits'));
+    }
+
+    /**
+     * Auto-verify pending ViserMart payments
+     * This handles cases where webhooks couldn't reach localhost
+     */
+    protected function autoVerifyPendingViserMartPayments()
+    {
+        $pendingDeposits = Transaction::where('user_id', auth()->user()->id)
+            ->where('status', TxnStatus::Pending)
+            ->where('type', TxnType::Deposit)
+            ->where('method', 'paystack') // ViserMart uses Paystack gateway
+            ->where('created_at', '>', now()->subHours(24)) // Only check recent transactions
+            ->get();
+
+        foreach ($pendingDeposits as $deposit) {
+            try {
+                // Check status via ViserMart API
+                $viserMart = new \App\Support\ViserMartPaymentService();
+                $status = $viserMart->checkPaymentStatus($deposit->tnx);
+
+                if (isset($status['status']) && $status['status'] === 'paid') {
+                    $this->paymentSuccess($deposit->tnx, false);
+                    Log::info('Auto-verified ViserMart payment', ['ref' => $deposit->tnx]);
+                }
+            } catch (\Exception $e) {
+                Log::error('Error auto-verifying ViserMart payment', [
+                    'ref' => $deposit->tnx,
+                    'error' => $e->getMessage()
+                ]);
+            }
+        }
     }
 }

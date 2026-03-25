@@ -16,7 +16,7 @@ class ReferralController extends Controller
             return to_route('user.dashboard');
         }
 
-        $user = auth()->user();
+        $user = \App\Models\User::find(auth()->id());
 
         $getReferral = $user->getReferrals()->first();
 

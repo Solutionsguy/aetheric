@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Enums\AdsFor;
 use App\Enums\AdsStatus;
 use App\Enums\AdsType;
+use App\Enums\PlanHistoryStatus;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -71,7 +72,11 @@ class Ads extends Model
 
     protected function scopeForUser($query)
     {
-        $for = auth()->user()->plan_id !== null ? AdsFor::SubscribedUsers : AdsFor::FreeUsers;
+        $isSubscribed = \App\Models\PlanHistory::where('user_id', auth()->id())
+            ->where('status', \App\Enums\PlanHistoryStatus::ACTIVE)
+            ->exists();
+
+        $for = $isSubscribed ? AdsFor::SubscribedUsers : AdsFor::FreeUsers;
 
         return $query->whereIn('for', [AdsFor::BothUsers, $for]);
     }

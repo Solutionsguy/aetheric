@@ -57,10 +57,10 @@
 
                                             </td>
                                             <td>
-                                                @if($staff->getRoleNames()->first() === 'Super-Admin')
+                                                @if($staff->id === auth()->id())
                                                     <button class="round-icon-btn red-btn" type="button"
                                                             data-bs-toggle="tooltip" title="" data-bs-placement="top"
-                                                            data-bs-original-title="Not Editable">
+                                                            data-bs-original-title="Cannot edit your own account">
                                                         <i data-lucide="edit-3"></i>
                                                     </button>
                                                 @else

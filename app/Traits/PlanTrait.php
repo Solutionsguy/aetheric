@@ -34,12 +34,24 @@ trait PlanTrait
                 'validity_at' => now()->addDays($plan->validity),
                 'status' => PlanHistoryStatus::ACTIVE,
             ]);
+             $user->update(['plan_id' => $plan->id]);
         }
 
         // Credit referral bonus if enabled
-        if (setting('subscription_plan_level') && $transaction !== null) {
-            $level = getReferralLevel($transaction->user_id);
-            creditReferralBonus($transaction->user, 'subscription_plan', $transaction->amount, $level);
-        }
+        if ($transaction !== null) {
+        if (setting('subscription_plan_level')) {
+           // Award 'subscription_plan' type bonus if enabled
+           $level = getReferralLevel($transaction->user_id);
+           creditReferralBonus($transaction->user, 'subscription_plan', $transaction->amount, $level);
+        } elseif (setting('deposit_level') && $transaction->method !== 'system') {
+            // Fallback: If subscription commissions are off, treat direct gateway purchases
+            // as a 'deposit' commission (since it's new money entering the system).
+           // We exclude 'system' method to avoid double-paying for balance purchases.
+           $level = getReferralLevel($transaction->user_id);
+           creditReferralBonus($transaction->user, 'deposit', $transaction->amount, $level);
+       }
     }
-}
+    
+
+    }
+    }

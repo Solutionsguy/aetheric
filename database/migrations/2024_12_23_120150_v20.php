@@ -14,15 +14,25 @@ return new class extends Migration
     {
         // Update the plan_histories table
         Schema::table('plan_histories', function (Blueprint $table) {
-            $table->integer('daily_ads_limit')->default(0)->after('plan_id');
-            $table->string('status')->default(PlanHistoryStatus::ACTIVE->value)->after('amount');
-            $table->integer('referral_level')->default(0)->after('daily_ads_limit');
-            $table->integer('withdraw_limit')->default(0)->after('referral_level');
+            if (!Schema::hasColumn('plan_histories', 'daily_ads_limit')) {
+                $table->integer('daily_ads_limit')->default(0)->after('plan_id');
+            }
+            if (!Schema::hasColumn('plan_histories', 'status')) {
+                $table->string('status')->default(PlanHistoryStatus::ACTIVE->value)->after('amount');
+            }
+            if (!Schema::hasColumn('plan_histories', 'referral_level')) {
+                $table->integer('referral_level')->default(0)->after('daily_ads_limit');
+            }
+            if (!Schema::hasColumn('plan_histories', 'withdraw_limit')) {
+                $table->integer('withdraw_limit')->default(0)->after('referral_level');
+            }
         });
 
         // Update the ads_histories table
         Schema::table('ads_histories', function (Blueprint $table) {
-            $table->foreignId('plan_id')->nullable()->after('ads_id');
+            if (!Schema::hasColumn('ads_histories', 'plan_id')) {
+                $table->foreignId('plan_id')->nullable()->after('ads_id');
+            }
         });
     }
 

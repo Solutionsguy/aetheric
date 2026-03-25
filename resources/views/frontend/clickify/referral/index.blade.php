@@ -53,6 +53,38 @@
             </div>
         </div>
         <div class="col-xxl-12">
+            <div class="row gy-20 mb-3">
+                <div class="col-md-6">
+                    <div class="site-card p-3">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                                <p class="text-muted mb-1">{{ __('Referral Balance') }}</p>
+                                <h3 class="mb-0">{{ $currencySymbol . $user->referral_balance }}</h3>
+                                <small class="text-muted">{{ __('Total Amount') }}</small>
+                            </div>
+                            <div class="icon-box" style="background:#d4edda;border-radius:12px;padding:14px;">
+                                <i class="icon-wallet" style="font-size:1.5rem;color:#28a745;"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="site-card p-3">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                                <p class="text-muted mb-1">{{ __('Invites') }}</p>
+                                <h3 class="mb-0">{{ auth()->user()->referrals->count() }}</h3>
+                                <small class="text-muted">{{ __('Total Amount') }}</small>
+                            </div>
+                            <div class="icon-box" style="background:#d1ecf1;border-radius:12px;padding:14px;">
+                                <i class="icon-profile-2user" style="font-size:1.5rem;color:#17a2b8;"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xxl-12">
             <div class="referral-share-wrapper">
                 <div class="referral-share-item">
                     <h3 class="title">{{ __('Share Your Referral Link') }}</h3>
@@ -175,25 +207,32 @@
     copyLinkButton.addEventListener('click', function () {
         const referralLink = referralLinkInput.value;
 
+        const onCopied = () => {
+            const originalText = copyLinkButton.innerHTML;
+            copyLinkButton.innerHTML = '<i class="icon-copy"></i>Copied!';
+            copyLinkButton.disabled = true;
+            setTimeout(() => {
+                copyLinkButton.innerHTML = originalText;
+                copyLinkButton.disabled = false;
+            }, 2000);
+        };
+
         // Copy the referral link to clipboard
-        navigator.clipboard.writeText(referralLink)
-            .then(() => {
-                // Change button text to "Copied!"
-                const originalText = copyLinkButton.innerHTML;
-                copyLinkButton.innerHTML = '<i class="icon-copy"></i>Copied!';
-
-                // Disable the button to prevent multiple clicks
-                copyLinkButton.disabled = true;
-
-                // Set a timeout to revert back to the original text after 2 seconds
-                setTimeout(() => {
-                    copyLinkButton.innerHTML = originalText;
-                    copyLinkButton.disabled = false; // Re-enable the button
-                }, 2000); // 2000ms = 2 seconds
-            })
-            .catch(err => {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(referralLink).then(onCopied).catch(err => {
                 console.error('Failed to copy: ', err);
             });
+        } else {
+            // Fallback for HTTP or older browsers
+            referralLinkInput.select();
+            referralLinkInput.setSelectionRange(0, 99999);
+            try {
+                document.execCommand('copy');
+                onCopied();
+            } catch (err) {
+                console.error('Fallback copy failed: ', err);
+            }
+        }
     });
 
     // Share referral link using Web Share API

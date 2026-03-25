@@ -13,8 +13,11 @@
             <div class="site-card">
                 <div class="site-card-header">
                     <h4 class="title">{{ __('Earnings') }}</h4>
-                    <div
-                        class="card-header-info">{{ __('Total Earnings:') }} {{ $user->totalProfit() }} {{ $currency }}</div>
+                    <div class="card-header-info">
+                        {{ __('Total Earnings:') }} {{ $user->totalProfit() }} {{ $currency }}
+                        &nbsp;|&nbsp; 🎬 {{ __('Ads') }}: {{ setting('currency_symbol','global') . $user->ads_balance }}
+                        &nbsp;|&nbsp; 🤝 {{ __('Referral') }}: {{ setting('currency_symbol','global') . $user->referral_balance }}
+                    </div>
                 </div>
                 <div class="site-card-body table-responsive">
 

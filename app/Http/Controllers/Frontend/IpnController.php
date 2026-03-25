@@ -102,18 +102,24 @@ class IpnController extends Controller
         return self::paymentSuccess($ref);
     }
 
-    public function paystackIpn()
+    public function paystackIpn(\Illuminate\Http\Request $request)
     {
-        $paymentDetails = Paystack::getPaymentData();
-        if ($paymentDetails['data']['status'] == 'success') {
-            $transactionId = $paymentDetails['data']['reference'];
-
-            return self::paymentSuccess($transactionId);
-
+        try {
+            \Log::info('Paystack callback received', ['query' => $request->all(), 'url' => $request->fullUrl()]);
+            $paymentDetails = Paystack::getPaymentData();
+            \Log::info('Paystack payment details', ['details' => $paymentDetails]);
+            
+            if ($paymentDetails['data']['status'] == 'success') {
+                $transactionId = $paymentDetails['data']['reference'];
+                return self::paymentSuccess($transactionId);
+            }
+            
+            \Log::error('Paystack payment failed or not successful', ['data' => $paymentDetails]);
+            return redirect()->route('status.cancel');
+        } catch (\Exception $e) {
+            \Log::error('Paystack callback error', ['error' => $e->getMessage(), 'trace' => $e->getTraceAsString()]);
+            return redirect()->route('status.cancel')->with('error', 'Payment verification failed: ' . $e->getMessage());
         }
-
-        return redirect()->route('status.cancel');
-
     }
 
     public function flutterwaveIpn()

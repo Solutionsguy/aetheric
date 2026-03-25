@@ -86,8 +86,14 @@ class RoleController extends Controller
      */
     public function edit($id)
     {
-
         $role = Role::find($id);
+
+        // Prevent staff from editing the role they are assigned to
+        if (!auth()->user()->is_admin && auth()->user()->roles->contains('id', $id)) {
+            notify()->error('You are not allowed to edit your own role.', 'Error');
+            return redirect()->route('admin.roles.index');
+        }
+
         $permissions = Permission::get()->groupBy('category');
         $rolePermissions = DB::table('role_has_permissions')->where('role_has_permissions.role_id', $id)
             ->pluck('role_has_permissions.permission_id', 'role_has_permissions.permission_id')
@@ -104,6 +110,11 @@ class RoleController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // Prevent staff from updating the role they are assigned to
+        if (!auth()->user()->is_admin && auth()->user()->roles->contains('id', $id)) {
+            notify()->error('You are not allowed to edit your own role.', 'Error');
+            return redirect()->route('admin.roles.index');
+        }
 
         $validator = Validator::make($request->all(), [
             'name' => 'required|unique:roles,name,'.$id,

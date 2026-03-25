@@ -182,9 +182,14 @@ if (! function_exists('getLocation')) {
 if (! function_exists('gateway_info')) {
     function gateway_info($code)
     {
-        $info = Gateway::where('gateway_code', $code)->first();
-
-        return json_decode($info->credentials);
+        \Log::debug('gateway_info called', ['code' => $code, 'db' => \DB::connection()->getDatabaseName()]);
+        try {
+            $info = Gateway::where('gateway_code', $code)->first();
+            return $info ? json_decode($info->credentials) : null;
+        } catch (\Exception $e) {
+            \Log::error('gateway_info error', ['code' => $code, 'error' => $e->getMessage()]);
+            return null;
+        }
     }
 }
 
@@ -258,7 +263,9 @@ if (! function_exists('creditReferralBonus')) {
 
             (new Txn)->new($amount, 0, $amount, 'System', $description, TxnType::Referral, TxnStatus::Success, null, null, $referrer->id, $fromUserReferral->id, 'User', [], 'none', $depth, $type, true);
 
-            $referrer->balance += $amount;
+            // Referral bonuses should not inflate the main (spendable) balance used for subscriptions.
+            // They are tracked separately in referral_balance.
+            $referrer->referral_balance += $amount;
             $referrer->save();
             creditReferralBonus($referrer, $type, $mainAmount, $level, $depth + 1, $user);
         }

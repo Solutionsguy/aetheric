@@ -109,7 +109,11 @@ class RegisteredUserController extends Controller
 
         if (setting('referral_signup_bonus', 'permission') && (float) setting('signup_bonus', 'fee') > 0) {
             $signupBonus = (float) setting('signup_bonus', 'fee');
-            $user->increment('balance', $signupBonus);
+
+            // Signup bonus is treated as an earning (not part of direct deposit balance).
+            // Keep it out of the main balance used for subscriptions.
+            $user->increment('referral_balance', $signupBonus);
+
             (new Txn)->new($signupBonus, 0, $signupBonus, 'system', 'Signup Bonus', TxnType::SignupBonus, TxnStatus::Success, null, null, $user->id);
             Session::put('signup_bonus', $signupBonus);
         }

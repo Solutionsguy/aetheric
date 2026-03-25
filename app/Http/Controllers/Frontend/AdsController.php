@@ -123,6 +123,8 @@ class AdsController extends Controller
         if ($adsBonusType) {
             // Credit to User
             $user = $request->user();
+            // Ads earnings are part of the main balance (deposit + ads earnings)
+            $user->increment('ads_balance', $ads->amount);
             $user->increment('balance', $ads->amount);
 
             // Add Transaction

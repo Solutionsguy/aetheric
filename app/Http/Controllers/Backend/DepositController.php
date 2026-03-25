@@ -82,10 +82,13 @@ class DepositController extends Controller
             return redirect()->back();
         }
 
-        if (isset($input['gateway_id'])) {
-            $gateway = Gateway::find($input['gateway_id']);
-            $methodCode = $gateway->gateway_code.'-'.strtolower($input['currency']);
+         $methodCode = null; // Initialize to prevent crash
+   if (isset($input['gateway_id']) && $input['gateway_id'] != null) {
+        $gateway = Gateway::find($input['gateway_id']);
+        if ($gateway) {
+            $methodCode = $gateway->gateway_code . '-' . strtolower($input['currency']);
         }
+    }
 
         $data = [
             'logo' => isset($input['logo']) ? self::imageUploadTrait($input['logo']) : null,
@@ -115,7 +118,10 @@ class DepositController extends Controller
     {
         $gateways = Gateway::where('status', true)->get();
         $method = DepositMethod::find(\request('id'));
-        $supported_currencies = Gateway::find($method->gateway_id)->supported_currencies ?? [];
+        
+        $supported_currencies = Gateway::find($method->gateway_id)->supported_currencies ?? '[]';
+        // Ensure it's an array for the view
+        $supported_currencies = is_array($supported_currencies) ? $supported_currencies : (json_decode($supported_currencies, true) ?: []);
 
         return view('backend.deposit.edit_method', compact('method', 'type', 'gateways', 'supported_currencies'));
     }

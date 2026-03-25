@@ -15,7 +15,7 @@ trait ImageUpload
         if ($query->getSize() > 5100000) {
             notify()->error(__('Max file size:5MB '), 'Error');
 
-            return redirect()->back();
+            return null;
         }
 
         if (! in_array($ext, $allowExt)) {

@@ -5,7 +5,7 @@
 
 <!-- Benefits section start -->
 <section class="benefits-section section-space p-relative fix benefits-overlay include-bg"
-         data-background="{{ asset($data['bg_img']) }}">
+         data-background="{{ asset($data['bg_img'] ?? '') }}">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-xxl-6 col-xl-6 col-lg-6">

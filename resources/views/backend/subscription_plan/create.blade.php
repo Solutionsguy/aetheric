@@ -47,7 +47,7 @@
                                     <div class="site-input-groups">
                                         <label class="box-input-label" for="">{{ __('Price') }}</label>
                                         <div class="input-group joint-input">
-                                            <input type="number" name="price" class="form-control" value="{{ old('price') }}"/>
+                                            <input type="number" step="0.01" name="price" class="form-control" value="{{ old('price') }}" placeholder="e.g. 22.5"/>
                                             <span class="input-group-text">{{ $currency }}</span>
                                         </div>
                                     </div>

@@ -106,6 +106,10 @@
                                                 <div
                                                     class="balance">{{ setting('currency_symbol','global') . $user->balance }}</div>
                                             </div>
+                                            <div class="wallet-info mt-2" style="font-size:0.8rem; opacity:0.85;">
+                                                <div>🎬 {{ __('Ads') }}: <strong>{{ setting('currency_symbol','global') . $user->ads_balance }}</strong></div>
+                                                <div>🤝 {{ __('Referral') }}: <strong>{{ setting('currency_symbol','global') . $user->referral_balance }}</strong></div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

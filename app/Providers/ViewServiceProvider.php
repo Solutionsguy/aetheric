@@ -8,7 +8,7 @@ use App\Models\Page;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use Jenssegers\Agent\Agent;
-use Remotelywork\Installer\Repository\App;
+use App\Support\AppInstall;
 
 class ViewServiceProvider extends ServiceProvider
 {
@@ -27,7 +27,7 @@ class ViewServiceProvider extends ServiceProvider
     public function boot()
     {
 
-        if (App::dbConnectionCheck()) {
+        if (AppInstall::dbConnectionCheck()) {
             View::composer(['backend.include.__side_nav', 'backend.setting.site_setting.include.__global'], function ($view) {
                 $view->with([
                     'landingSections' => cache()->remember('landingSections', 60 * 60 * 24, function () {

@@ -8,7 +8,7 @@ use App\Models\Transaction;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
-use Remotelywork\Installer\Repository\App;
+use App\Support\AppInstall;
 
 class Txn
 {
@@ -86,8 +86,9 @@ class Txn
 
         $user = User::find($uId);
 
-        if ($status == TxnStatus::Success && App::initApp() && ($transaction->type == TxnType::Deposit || $transaction->type == TxnType::ManualDeposit)) {
+        if ($status == TxnStatus::Success && AppInstall::initApp() && ($transaction->type == TxnType::Deposit || $transaction->type == TxnType::ManualDeposit)) {
             $amount = $transaction->amount;
+            $user->increment('deposit_balance', $amount);
             $user->increment('balance', $amount);
         }
 

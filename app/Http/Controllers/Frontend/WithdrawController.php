@@ -267,6 +267,7 @@ class WithdrawController extends Controller
         $validator = Validator::make($request->all(), [
             'amount' => ['required', 'regex:/^[0-9]+(\.[0-9][0-9]?)?$/'],
             'withdraw_account' => 'required',
+            'wallet' => ['required', 'in:balance,referral_balance'],
         ]);
 
         if ($validator->fails()) {
@@ -326,13 +327,16 @@ class WithdrawController extends Controller
         $charge = $withdrawMethod->charge_type == 'percentage' ? (($withdrawMethod->charge / 100) * $amount) : $withdrawMethod->charge;
         $totalAmount = $amount + (float) $charge;
 
-        if ($user->balance < $totalAmount) {
-            notify()->error(__('Insufficient Balance'), 'Error');
+        $wallet = $input['wallet'] ?? 'balance';
+
+        if ($user->$wallet < $totalAmount) {
+            notify()->error(__('Insufficient Balance in selected wallet'), 'Error');
 
             return redirect()->back();
         }
 
-        $user->decrement('balance', $totalAmount);
+        // Deduct ONLY from the selected wallet — wallets are fully independent
+        $user->decrement($wallet, $totalAmount);
 
         $payAmount = $amount * $withdrawMethod->rate;
 
@@ -395,7 +399,9 @@ class WithdrawController extends Controller
             return ! $value->method->status;
         });
 
-        return view('frontend::withdraw.now', compact('accounts'));
+        $currencySymbol = setting('currency_symbol', 'global');
+
+        return view('frontend::withdraw.now', compact('accounts', 'currencySymbol'));
     }
 
     public function withdrawLog()

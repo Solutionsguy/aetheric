@@ -40,6 +40,9 @@ class User extends Authenticatable implements CanUseTickets, MustVerifyEmail
         'zip_code',
         'address',
         'balance',
+        'deposit_balance',
+        'ads_balance',
+        'referral_balance',
         'status',
         'kyc',
         'google2fa_secret',
@@ -185,6 +188,11 @@ class User extends Authenticatable implements CanUseTickets, MustVerifyEmail
 
         return round($sum, 2);
     }
+
+  public function plan()
+  {
+     return $this->belongsTo(SubscriptionPlan::class, 'plan_id');
+  }
 
     public function rejectedKycs()
     {

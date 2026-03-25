@@ -16,3 +16,4 @@ yarn-error.log
 /.vscode
 /node_modules
 *.zip
+.aider*

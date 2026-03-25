@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
-use Remotelywork\Installer\Repository\App;
+use App\Support\AppInstall;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -42,7 +42,7 @@ class AppServiceProvider extends ServiceProvider
             return new Txn();
         });
 
-        if (App::dbConnectionCheck()) {
+        if (AppInstall::dbConnectionCheck()) {
             $timezone = setting('site_timezone', 'global');
 
             config()->set([

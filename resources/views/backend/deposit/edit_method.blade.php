@@ -60,7 +60,7 @@
                                         <label class="box-input-label"
                                                for="">{{ __('Gateway Supported Currency:') }}</label>
                                         <select name="currency" class="form-select" id="currency">
-                                            @foreach(json_decode($supported_currencies) as $currency)
+                                            @foreach($supported_currencies as $currency)
                                                 <option
                                                     value="{{ $currency }}" @selected($currency == $method->currency )>{{ $currency }} </option>
                                             @endforeach

@@ -8,7 +8,7 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Remotelywork\Installer\Repository\App;
+use App\Support\AppInstall;
 
 class IsMaintenance
 {
@@ -27,7 +27,7 @@ class IsMaintenance
      */
     public function handle(Request $request, Closure $next)
     {
-        if (! App::dbConnectionCheck()) {
+        if (! AppInstall::dbConnectionCheck()) {
             return $next($request);
         }
 

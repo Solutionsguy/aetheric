@@ -27,11 +27,10 @@ class DepositMethod extends Model
 
     public function getGatewayLogoAttribute()
     {
-
-        if ($this->logo == null) {
-            return asset($this->gateway->logo);
-        }
-
-        return asset($this->logo);
+       if ($this->logo == null) {
+           // Add a null-safe check for the gateway relationship
+           return ($this->gateway) ? asset($this->gateway->logo) : asset('global/materials/upload.svg');
+       }
+       return asset($this->logo);
     }
 }

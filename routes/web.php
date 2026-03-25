@@ -181,6 +181,7 @@ Route::group(['prefix' => 'ipn', 'as' => 'ipn.', 'controller' => IpnController::
     Route::post('paytm', 'paytmIpn')->name('paytm');
     Route::post('razorpay', 'razorpayIpn')->name('razorpay');
     Route::post('twocheckout', 'twocheckoutIpn')->name('twocheckout');
+    Route::post('visermart', [\App\Http\Controllers\Api\ViserMartWebhookController::class, 'handle'])->name('visermart');
 });
 
 // Site others
@@ -195,3 +196,7 @@ Route::get('site-cron', [CronJobController::class, 'runCronJobs'])->name('cron.j
 
 // Update System
 Route::get('update', UpdateController::class)->middleware(['web', 'auth:admin', 'XSS', 'isDemo', 'trans', 'install_check'])->name('update');
+
+// Paystack manual verify (for localhost testing)
+Route::get('payment/verify', [\App\Http\Controllers\Frontend\PaystackVerifyController::class, 'verify'])->name('payment.verify');
+Route::get('payment/callback', [\App\Http\Controllers\Frontend\PaystackVerifyController::class, 'verify'])->name('payment.callback');

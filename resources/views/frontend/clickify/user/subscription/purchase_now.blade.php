@@ -21,14 +21,14 @@
                                 <h6>{{ __('Select Purchase Method') }}</h6>
                                 <label class="label-radio" for="balanceRadio">
                                     <input type="radio" name="method" id="balanceRadio" value="balance">
-                                    <span>{{ __('My Balance') }}</span>
+                                    <span>{{ __('Deposit Balance') }}</span>
                                 </label>
                                 <label class="label-radio" for="gatewayRadio">
                                     <input type="radio" name="method" id="gatewayRadio" value="gateway">
                                     <span>{{ __('Direct Gateway') }}</span>
                                 </label>
                                 <div id="balanceContent" class="select-gateway-item">
-                                    <p class="description">{{ __('Your balance is') }} <span>{{ $currencySymbol.auth()->user()->balance }}</span></p>
+                                    <p class="description">{{ __('Your deposit balance is') }} <span>{{ $currencySymbol.$user->deposit_balance }}</span></p>
                                 </div>
                                 <div id="gatewayContent" class="select-gateway-item">
                                     <h4 class="title">{{ __('Select Gateway') }}</h4>
@@ -230,5 +230,52 @@
         });
     });
 
+     $(document).on('change', 'input[name=gateway_code]', function (e) {
+         var code = $(this).val();
+    
+         if (code === 'mpesa_stk') {
+             // 1. Show the Alert
+             alert("STK push is under maintenance, kindly use P2P.");
+    
+             // 2. Force the UI to reset
+             $(this).prop('checked', false);
+            $('.add-gateway-item').removeClass('active');
+            $('.payment-details').addClass('d-none');
+   
+            
+            return false;
+        }
+
+        $('form').on('submit', function(e) {
+       var selectedGateway = $('input[name=gateway_code]:checked').val();
+       if (selectedGateway === 'mpesa_stk') {
+           alert("STK push is under maintenance, kindly use P2P.");
+           e.preventDefault(); // This stops the form from sending to the server
+           return false;
+      }
+   });
+
+     $(document).ready(function() {
+         // 1. Alert immediately on click/selection
+         $(document).on('change', 'input[name=gateway_code]', function() {
+             if ($(this).val() === 'mpesa_stk') {
+                 alert("STK push is under maintenance, kindly use P2P.");
+                 // Reset UI
+                 $('.payment-details').addClass('d-none');
+                 $(this).prop('checked', false);
+                 $(this).closest('.add-gateway-item').removeClass('active');
+            }
+        });
+   
+       // 2. Block the final form submission
+       $('form').on('submit', function(e) {
+           var selected = $('input[name=gateway_code]:checked').val();
+            if (selected === 'mpesa_stk') {
+                alert("STK push is under maintenance, kindly use P2P.");
+                e.preventDefault(); // This is what stops the transaction from being recorded
+                return false;
+            }
+        });
+    });
   </script>
 @endpush

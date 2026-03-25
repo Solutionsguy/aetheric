@@ -37,7 +37,7 @@ class StaffController extends Controller
      */
     public function index()
     {
-        $roles = Role::whereNot('name', 'Super-Admin')->get();
+        $roles = Role::all();
         $staffs = Admin::all();
 
         return view('backend.staff.index', compact('roles', 'staffs'));
@@ -54,7 +54,7 @@ class StaffController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:admins,email',
             'password' => 'required|same:confirm-password',
-            'role' => ['required', Rule::notIn('Super-Admin')],
+            'role' => ['required'],
             'status' => 'boolean',
         ]);
 
@@ -67,6 +67,7 @@ class StaffController extends Controller
         $input = $request->all();
 
         $input['password'] = Hash::make($input['password']);
+        $input['is_admin'] = $request->input('role') === 'Super-Admin' ? 1 : 0;
 
         $admin = Admin::create($input);
         $admin->assignRole($request->input('role'));
@@ -83,7 +84,7 @@ class StaffController extends Controller
      */
     public function edit($id)
     {
-        $roles = Role::whereNot('name', 'Super-Admin')->get();
+        $roles = Role::all();
         $staff = Admin::find($id);
         $staff->getRoleNames()->first();
 
@@ -103,7 +104,7 @@ class StaffController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:admins,email,'.$id,
             'password' => 'same:confirm-password',
-            'role' => ['required', Rule::notIn('Super-Admin')],
+            'role' => ['required'],
             'status' => 'boolean',
         ]);
 
@@ -123,8 +124,9 @@ class StaffController extends Controller
 
         $staff = Admin::find($id);
 
-        if ($staff->getRoleNames()->first() === 'Super-Admin') {
-            notify()->warning('Super admin not changeable');
+        // Prevent editing your own account via this form
+        if ($staff->id === auth()->id()) {
+            notify()->error('You cannot edit your own account here.', 'Error');
 
             return redirect()->back();
         }
@@ -133,6 +135,10 @@ class StaffController extends Controller
         DB::table('model_has_roles')->where('model_id', $id)->delete();
 
         $staff->assignRole($request->input('role'));
+
+        // Sync is_admin flag based on assigned role
+        $staff->is_admin = $request->input('role') === 'Super-Admin' ? 1 : 0;
+        $staff->save();
 
         notify()->success('Staff updated successfully');
 

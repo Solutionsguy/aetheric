@@ -10,7 +10,7 @@ class DashboardController extends Controller
 {
     public function dashboard(Request $request)
     {
-        $user = auth()->user();
+        $user = \App\Models\User::find(auth()->id());
         $transactions = Transaction::where('user_id', $user->id);
 
         $recentTransactions = $transactions->latest()->take(5)->get();

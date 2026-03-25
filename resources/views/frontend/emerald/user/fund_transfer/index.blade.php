@@ -44,7 +44,7 @@
                                         </span>
                                     </div>
                                     <div class="text-content">
-                                        <p class="note">{{ $currencySymbol }}<span class="charges">0</span> {{ __('will be deduct from your account') }}.</p>
+                                        <p class="note">{{ $currencySymbol }}<span class="charges">0</span> {{ __('will be deducted from your deposit balance') }}.</p>
                                     </div>
                                 </div>
                             </div>

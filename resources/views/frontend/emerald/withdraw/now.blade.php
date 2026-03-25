@@ -21,6 +21,16 @@
                     <div class="col-xxl-6 col-xl-6 col-lg-6">
                         <div class="withdraw-form">
                             <div class="single-input">
+                                <label class="input-label" for="">{{ __('Select Wallet') }}</label>
+                                <div class="input-select">
+                                    <select name="wallet" id="walletSelect">
+                                        <option selected disabled>{{ __('Select Wallet') }}</option>
+                                        <option value="balance">{{ __('Main Balance') }} ({{ $currencySymbol . auth()->user()->balance }})</option>
+                                        <option value="referral_balance">{{ __('Referral Wallet') }} ({{ $currencySymbol . auth()->user()->referral_balance }})</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="single-input">
                                 <label class="input-label" for="">{{ __('Withdraw Account') }}</label>
                                 <div class="input-select">
                                     <select name="withdraw_account" id="withdrawAccountId">

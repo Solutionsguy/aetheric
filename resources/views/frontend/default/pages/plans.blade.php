@@ -38,7 +38,7 @@
                         <h3 class="item-title">{{ $plan->name }}</h3>
                         <p class="description">{{ $plan->description }}</p>
                         <div class="price-value">
-                            <strong>{{ $currencySymbol.round($plan->price) }}</strong>
+                            <strong>{{ $currencySymbol . number_format($plan->price, 2) }}</strong>
                             <sub>/ {{ $plan->validity.' '.__('Days') }}</sub>
                         </div>
                         <div class="price-btn">

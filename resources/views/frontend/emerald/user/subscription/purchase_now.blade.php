@@ -21,14 +21,14 @@
                                 <h6>{{ __('Select Purchase Method') }}</h6>
                                 <label class="label-radio" for="balanceRadio">
                                     <input type="radio" name="method" id="balanceRadio" value="balance">
-                                    <span>{{ __('My Balance') }}</span>
+                                    <span>{{ __('Deposit Balance') }}</span>
                                 </label>
                                 <label class="label-radio" for="gatewayRadio">
                                     <input type="radio" name="method" id="gatewayRadio" value="gateway">
                                     <span>{{ __('Direct Gateway') }}</span>
                                 </label>
                                 <div id="balanceContent" class="select-gateway-item">
-                                    <p class="description">{{ __('Your balance is') }} <span>{{ $currencySymbol.auth()->user()->balance }}</span></p>
+                                    <p class="description">{{ __('Your deposit balance is') }} <span>{{ $currencySymbol.$user->deposit_balance }}</span></p>
                                 </div>
                                 <div id="gatewayContent" class="select-gateway-item">
                                     <h4 class="title">{{ __('Select Gateway') }}</h4>

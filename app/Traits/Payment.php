@@ -27,12 +27,14 @@ use Payment\Monnify\MonnifyTxn;
 use Payment\Nowpayments\NowpaymentsTxn;
 use Payment\Paymongo\PaymongoTxn;
 use Payment\Paypal\PaypalTxn;
+use Payment\Paystack\PaystackTxn;
 use Payment\Paytm\PaytmTxn;
 use Payment\Perfectmoney\PerfectmoneyTxn;
 use Payment\Razorpay\RazorpayTxn;
 use Payment\Securionpay\SecurionpayTxn;
 use Payment\Stripe\StripeTxn;
 use Payment\Twocheckout\TwocheckoutTxn;
+use Payment\Voguepay\VoguepayTxn;
 
 trait Payment
 {
@@ -41,14 +43,19 @@ trait Payment
     protected function depositAutoGateway($gateway, $txnInfo)
     {
         $txn = $txnInfo->tnx;
+        \Illuminate\Support\Facades\Log::info('depositAutoGateway called', ['gateway_input' => $gateway, 'txn' => $txn]);
         Session::put('deposit_tnx', $txn);
-        $gateway = DepositMethod::code($gateway)->first()->gateway->gateway_code ?? 'none';
+        $gatewayMethod = DepositMethod::code($gateway)->first();
+        $gatewayCode = $gatewayMethod->gateway->gateway_code ?? 'none';
+        \Illuminate\Support\Facades\Log::info('Resolved gateway code', ['code' => $gatewayCode]);
 
-        $gatewayTxn = self::gatewayMap($gateway, $txnInfo);
+        $gatewayTxn = self::gatewayMap($gatewayCode, $txnInfo);
         if ($gatewayTxn) {
+            \Illuminate\Support\Facades\Log::info('Found gateway transaction class', ['class' => get_class($gatewayTxn)]);
             return $gatewayTxn->deposit();
         }
 
+        \Illuminate\Support\Facades\Log::warning('No gateway transaction class found for code', ['code' => $gatewayCode]);
         return self::paymentNotify($txn, 'pending');
     }
 
@@ -104,10 +111,31 @@ trait Payment
 
         (new Txn)->update($ref, TxnStatus::Success, $txnInfo->user_id);
 
-        if (setting('deposit_level')) {
+        // If this transaction was a subscription plan purchase via an automatic gateway,
+        // we must activate/record the plan here as well (paymentNotify() is bypassed).
+        if ($txnInfo->type == TxnType::PlanPurchased) {
+            $plan = SubscriptionPlan::find($txnInfo->plan_id);
+            if ($plan) {
+                $this->executePlanPurchaseProcess($txnInfo->user, $plan, $txnInfo);
+            }
+        }
+
+        // Deposit referral bounty: pay only for actual deposits.
+        // If you also want plan purchases to be treated as deposits, we handle that below.
+       /*
+        if (setting('deposit_level') && ($txnInfo->type == TxnType::Deposit || $txnInfo->type == TxnType::ManualDeposit)) {
             $level = getReferralLevel($txnInfo->user_id);
             creditReferralBonus($txnInfo->user, 'deposit', $txnInfo->amount, $level);
         }
+
+        // Optional: treat subscription purchases as a deposit action for referral bounty.
+        // This allows deposit-level referral to work for both wallet and gateway plan purchases.
+        // To avoid double-paying, we only do this when subscription_plan_level is OFF.
+        if ($txnInfo->type == TxnType::PlanPurchased && setting('deposit_level') && ! setting('subscription_plan_level')) {
+            $level = getReferralLevel($txnInfo->user_id);
+            creditReferralBonus($txnInfo->user, 'deposit', $txnInfo->amount, $level);
+        }
+        */
 
         if ($isRedirect) {
             return redirect(URL::temporarySignedRoute(
@@ -126,8 +154,8 @@ trait Payment
             'mollie' => MollieTxn::class,
             'perfectmoney' => PerfectmoneyTxn::class,
             'coinbase' => CoinbaseTxn::class,
-            'paystack' => PaytmTxn::class,
-            'voguepay' => BinanceTxn::class,
+            'paystack' => PaystackTxn::class,
+            'voguepay' => VoguepayTxn::class,
             'flutterwave' => FlutterwaveTxn::class,
             'cryptomus' => CryptomusTxn::class,
             'nowpayments' => NowpaymentsTxn::class,

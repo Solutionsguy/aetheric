@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Remotelywork\Installer\Repository\App;
+use App\Support\AppInstall;
 
 class ThemeServiceProvider extends ServiceProvider
 {
@@ -21,7 +21,7 @@ class ThemeServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if (App::dbConnectionCheck()) {
+        if (AppInstall::dbConnectionCheck()) {
             $views = __DIR__.'/../../resources/views/frontend/'.site_theme();
             $this->loadViewsFrom($views, 'frontend');
         }

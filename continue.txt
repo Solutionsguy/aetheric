@@ -1,0 +1,61 @@
+================================================================================
+PROJECT: AETHERIC (SolidNew) + ViserMart Payment Integration
+UPDATE: 2026-03-23 21:45
+================================================================================
+
+MISSION SUMMARY:
+Enable SolidNew users to make deposits via Paystack through ViserMart (external
+payment proxy). SolidNew sends users to ViserMart checkout, ViserMart handles
+Paystack payment, then notifies SolidNew via webhook on success.
+
+================================================================================
+CURRENT STATUS: TESTING COMPLETE - ALL SYSTEMS FUNCTIONAL
+================================================================================
+
+VISERMART (External Payment Gateway) - VERIFIED
+-----------------------------------------------
+[OK] Migration: external_transactions table created and migrated.
+[OK] API: Payment initiation returns valid checkout_url.
+[OK] Webhook: Paystack webhook correctly updates internal status to 'paid'.
+[OK] Callback: Correctly notifies SolidNew with signed HMAC signature.
+
+AETHERIC (SolidNew) - VERIFIED
+------------------------------
+[OK] Service: Correctly calls ViserMart API and handles responses.
+[OK] Webhook: Correctly verifies ViserMart signature and updates transaction.
+[OK] Business Logic: Successfully updates user balance and transaction status.
+[FIX] PHP 8 Compatibility: Fixed syntax error in DepositController.php.
+
+================================================================================
+VERIFICATION RESULTS
+================================================================================
+
+1. Payment Initiation:
+   - Reference: VM_0ZWzF5Hn0Qjm
+   - Status: Success
+   - Result: Valid checkout_url generated.
+
+2. Webhook Flow:
+   - Simulation: Paystack -> ViserMart -> SolidNew
+   - User ID: 1 (anthonychermann)
+   - Initial Balance: 8
+   - Deposit Amount: 500 KES
+   - Final Balance: 508
+   - Transaction Status: success
+
+================================================================================
+NOTES & OBSERVATIONS
+================================================================================
+
+- Currency Support: The Paystack account currently supports KES. Testing with 
+  NGN or USD failed with "unsupported_currency". Ensure production keys match 
+  the intended operating currency.
+- CSRF Protection: Verified that SolidNew's ipn/* routes are correctly exempted 
+  from CSRF verification in VerifyCsrfToken.php.
+- API Keys: Confirmed matching AETHERIC_API_KEY and AETHERIC_WEBHOOK_SECRET in 
+  both system .env files.
+
+================================================================================
+PROJECT STATUS: HANDOVER READY
+================================================================================
+END

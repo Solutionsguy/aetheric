@@ -36,8 +36,11 @@ class SubscriptionController extends GatewayController
     public function purchasePreview(SubscriptionPlan $plan)
     {
         $gateways = DepositMethod::where('status', 1)->get();
+        $user = \App\Models\User::find(auth()->id());
+        $currencySymbol = setting('currency_symbol', 'global');
+        $currency = setting('currency', 'global');
 
-        return view('frontend::user.subscription.purchase_now', compact('plan', 'gateways'));
+        return view('frontend::user.subscription.purchase_now', compact('plan', 'gateways', 'user', 'currencySymbol', 'currency'));
     }
 
     public function subscriptionNow(Request $request)
@@ -62,13 +65,25 @@ class SubscriptionController extends GatewayController
             $planPrice = $plan->price;
             $payMethod = $request->get('method', 'balance');
 
-            if ($payMethod == 'balance' && $user->balance < $planPrice) {
-                notify()->error(__('Insufficent Balance.'), 'Error');
+            if ($payMethod == 'balance' && $user->deposit_balance < $planPrice) {
+                notify()->error(__('Insufficient Deposit Balance.'), 'Error');
 
                 return redirect()->back();
             }
 
+            if ($request->get('gateway_code') === 'mpesa_stk') {
+        DB::rollBack();
+        notify()->error('STK push is under maintenance, kindly use P2P.', 'Error');
+        return redirect()->back();
+    }
+// Block the dummy M-Pesa gateway from creating a transaction
+    if ($request->get('gateway_code') === 'mpesa_stk') {
+        DB::rollBack(); // Ensure no database changes are saved
+        notify()->error('STK push is under maintenance, kindly use P2P.', 'Error');
+        return redirect()->back();
+    }
             if ($payMethod == 'balance') {
+                $user->decrement('deposit_balance', $planPrice);
                 $user->decrement('balance', $planPrice);
             } else {
 

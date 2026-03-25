@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Remotelywork\Installer\Repository\App;
+use App\Support\AppInstall;
 use Schema;
 
 class SettingServiceProvider extends ServiceProvider
@@ -25,7 +25,7 @@ class SettingServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if (App::dbConnectionCheck() && Schema::hasTable('settings')) {
+        if (AppInstall::dbConnectionCheck() && Schema::hasTable('settings')) {
 
             config()->set([
                 'mail.from.name' => setting('email_from_name', 'mail'),

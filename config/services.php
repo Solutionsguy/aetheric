@@ -40,4 +40,10 @@ return [
         'industry_type' => env('PAYTM_INDUSTRY_TYPE'),
     ],
 
+    'visermart' => [
+        'base_url' => env('VISERMART_BASE_URL', 'http://localhost/ViserMart'),
+        'api_key' => env('AETHERIC_API_KEY'),
+        'webhook_secret' => env('AETHERIC_WEBHOOK_SECRET'),
+    ],
+
 ];

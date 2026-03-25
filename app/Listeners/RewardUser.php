@@ -39,15 +39,9 @@ class RewardUser
 
             $email_verification = setting('email_verification', 'permission') ? $referral->user->email_verified_at !== null : true;
 
-            // Sign Up Referral Bonus
-            if (setting('sign_up_referral', 'permission') && $email_verification) {
-
-                $referralBonus = (float) setting('referral_bonus', 'fee');
-                // User who was sharing link
-                $provider = $referral->user;
-                $provider->increment('balance', $referralBonus);
-                Txn::new($referralBonus, 0, $referralBonus, 'System', 'Referral Bonus via '.$event->user->full_name, TxnType::Referral, TxnStatus::Success, null, null, $provider->id);
-            }
+            // Signup referral bonus removed:
+            // This project now uses level-based referral rewards (percentage of deposits/subscriptions)
+            // via creditReferralBonus() instead of a fixed signup bonus.
         }
     }
 }

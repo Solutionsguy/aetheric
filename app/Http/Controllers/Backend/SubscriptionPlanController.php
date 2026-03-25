@@ -39,6 +39,7 @@ class SubscriptionPlanController extends Controller
             'name' => 'required',
             'description' => 'required',
             'daily_limit' => 'required|numeric',
+            // Allow decimals (e.g. 22.5)
             'price' => 'required|numeric',
             'validity' => 'required|numeric',
             'withdraw_limit' => 'required|numeric',
@@ -53,11 +54,13 @@ class SubscriptionPlanController extends Controller
             return redirect()->back()->withInput();
         }
 
+        $price = (float) $request->get('price');
+
         SubscriptionPlan::create([
             'name' => $request->get('name'),
             'description' => $request->get('description'),
             'daily_limit' => $request->get('daily_limit'),
-            'price' => $request->get('price'),
+            'price' => $price,
             'validity' => $request->get('validity'),
             'withdraw_limit' => $request->get('withdraw_limit'),
             'referral_level' => $request->get('referral_level'),
@@ -84,6 +87,7 @@ class SubscriptionPlanController extends Controller
             'name' => 'required',
             'description' => 'required',
             'daily_limit' => 'required|numeric',
+            // Allow decimals (e.g. 22.5)
             'price' => 'required|numeric',
             'validity' => 'required|numeric',
             'withdraw_limit' => 'required|numeric',
@@ -98,11 +102,13 @@ class SubscriptionPlanController extends Controller
             return redirect()->back()->withInput();
         }
 
+        $price = (float) $request->get('price');
+
         SubscriptionPlan::findOrFail($id)->update([
             'name' => $request->get('name'),
             'description' => $request->get('description'),
             'daily_limit' => $request->get('daily_limit'),
-            'price' => $request->get('price'),
+            'price' => $price,
             'validity' => $request->get('validity'),
             'withdraw_limit' => $request->get('withdraw_limit'),
             'referral_level' => $request->get('referral_level'),

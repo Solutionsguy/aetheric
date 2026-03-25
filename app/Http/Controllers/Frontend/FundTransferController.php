@@ -82,17 +82,24 @@ class FundTransferController extends Controller
 
         $totalAmount = $amount + $charge;
 
-        if ($fromUser->balance < $amount) {
-            notify()->error(__('Insufficient Balance'));
+        // Fund transfers can only be sent from the user's deposit wallet.
+        if ($fromUser->deposit_balance < $totalAmount) {
+            notify()->error(__('Insufficient Deposit Balance'));
 
             return redirect()->back();
         }
 
+        // Debit sender (deposit wallet + main balance)
+        $fromUser->decrement('deposit_balance', $totalAmount);
         $fromUser->decrement('balance', $totalAmount);
+
         $sendDescription = 'Transfer Money To '.$toUser->username;
         (new Txn)->new($amount, $charge, $totalAmount, 'system', $sendDescription, TxnType::FundTransfer, TxnStatus::Success, null, null, $fromUser->id, $toUser->id);
 
+        // Credit receiver into deposit wallet (and main balance)
+        $toUser->increment('deposit_balance', $amount);
         $toUser->increment('balance', $amount);
+
         $receiveDescription = 'Transfer Money Form '.$fromUser->username;
         $txnInfo = (new Txn)->new($amount, $charge, $totalAmount, 'system', $receiveDescription, TxnType::ReceivedMoney, TxnStatus::Success, null, null, $toUser->id, $fromUser->id, 'User', []);
 

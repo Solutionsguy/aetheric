@@ -14,7 +14,7 @@ use App\Models\User;
 use App\Traits\NotifyTrait;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
-use Remotelywork\Installer\Repository\App;
+use App\Support\AppInstall;
 
 class CronJobController extends Controller
 {
@@ -86,6 +86,8 @@ class CronJobController extends Controller
                 $ads = $bonus->ads;
 
                 $user = $bonus->customer;
+                // Ads earnings are part of the main balance (deposit + ads earnings)
+                $user->increment('ads_balance', $ads->amount);
                 $user->increment('balance', $ads->amount);
 
                 (new Txn)->new($ads->amount, 0, $ads->amount, 'System', 'Ads Viewed - '.$ads->title, TxnType::AdsViewed, TxnStatus::Success, userID: $bonus->user_id);
@@ -178,7 +180,7 @@ class CronJobController extends Controller
 
     protected function startCron()
     {
-        if (! App::initApp()) {
+        if (! AppInstall::initApp()) {
             return false;
         }
     }

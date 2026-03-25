@@ -72,8 +72,8 @@
             </div>
             <div class="single-card">
                 <span class="info-title">{{ __('Deposit') }}</span>
-                <h3 class="number">{{ $currencySymbol.$total_deposit }}</h3>
-                <p class="description">{{ __('Total deposit amount') }}</p>
+                <h3 class="number">{{ $currencySymbol.$user->deposit_balance }}</h3>
+                <p class="description">{{ __('Available deposit balance') }}</p>
                 <div class="btn-inner">
                     <a class="round-btn" href="{{ route('user.transactions') }}"><span><i class="fa-sharp fa-regular fa-arrow-up-long"></i></span></a>
                 </div>
