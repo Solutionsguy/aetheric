@@ -8,6 +8,7 @@ use App\Http\Controllers\Frontend\DepositController;
 use App\Http\Controllers\Frontend\FundTransferController;
 use App\Http\Controllers\Frontend\GatewayController;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\InvestmentController;
 use App\Http\Controllers\Frontend\IpnController;
 use App\Http\Controllers\Frontend\KycController;
 use App\Http\Controllers\Frontend\MyAdsController;
@@ -43,6 +44,14 @@ Route::group(['middleware' => ['auth', '2fa', 'isActive', setting('otp_verificat
         Route::get('/history', 'history')->name('subscriptions.history');
         Route::get('/purchase/{plan}', 'purchasePreview')->name('subscription.purchase.preview');
         Route::post('/subscription-now', 'subscriptionNow')->name('subscription.now');
+    });
+
+    // Investment
+    Route::prefix('investments')->controller(InvestmentController::class)->group(function () {
+        Route::get('/', 'index')->name('investments');
+        Route::get('/history', 'history')->name('investments.history');
+        Route::get('/purchase/{plan}', 'purchasePreview')->name('investment.purchase.preview');
+        Route::post('/invest-now', 'investNow')->name('invest.now');
     });
 
     // Ads

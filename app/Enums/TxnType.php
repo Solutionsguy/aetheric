@@ -17,4 +17,6 @@ enum TxnType: string
     case Refund = 'refund';
     case FundTransfer = 'fund_transfer';
     case PlanPurchased = 'plan_purchased';
+    case Investment = 'investment';
+    case InvestmentProfit = 'investment_profit';
 }

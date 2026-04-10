@@ -23,7 +23,7 @@
                                     'withdraw' => setting('user_withdraw', 'permission') && auth()->user()->withdraw_status,
                                     'fund_transfer' => setting('transfer_status', 'permission') && auth()->user()->transfer_status,
                                     default => in_array($navigation->type, [
-                                        'dashboard', 'subscriptions', 'subscription_history', 'earnings', 'my_ads', 
+                                        'dashboard', 'subscriptions', 'subscription_history', 'investments', 'investment_history', 'earnings', 'my_ads', 
                                         'support', 'transactions', 'settings', 'logout'
                                     ]),
                                 };

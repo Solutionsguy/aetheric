@@ -130,6 +130,11 @@
                 <a href="{{ route('admin.subscription.plan.index') }}"><i
                         data-lucide="boxes"></i><span>{{ __('Subscription Plans') }}</span></a>
             </li>
+
+            <li class="side-nav-item {{ isActive('admin.investment.plan.*') }}">
+                <a href="{{ route('admin.investment.plan.index') }}"><i
+                        data-lucide="badge-dollar-sign"></i><span>{{ __('Investment Plans') }}</span></a>
+            </li>
             {{-- ************************************************************* Subscription Plans *********************************************************--}}
             <li class="side-nav-item category-title">
                 <span>{{ __('Ads') }}</span>

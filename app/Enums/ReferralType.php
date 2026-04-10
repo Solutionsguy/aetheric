@@ -6,4 +6,5 @@ enum ReferralType: string
 {
     case Deposit = 'deposit';
     case SubscriptionPlan = 'subscription_plan';
+    case Investment = 'investment';
 }

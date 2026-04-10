@@ -24,6 +24,7 @@ use App\Http\Controllers\Backend\SmsController;
 use App\Http\Controllers\Backend\SocialController;
 use App\Http\Controllers\Backend\StaffController;
 use App\Http\Controllers\Backend\SubscriptionPlanController;
+use App\Http\Controllers\Backend\InvestmentPlanController;
 use App\Http\Controllers\Backend\TestimonialController;
 use App\Http\Controllers\Backend\ThemeController;
 use App\Http\Controllers\Backend\TicketController;
@@ -78,6 +79,17 @@ Route::get('transactions', [TransactionController::class, 'transactions'])->name
 //===============================  Subscription Plan ==================================
 
 Route::controller(SubscriptionPlanController::class)->name('subscription.plan.')->prefix('subscription-plans')->group(function () {
+    Route::get('/', 'index')->name('index');
+    Route::get('/create', 'create')->name('create');
+    Route::post('/store', 'store')->name('store');
+    Route::get('/edit/{id}', 'edit')->name('edit');
+    Route::post('/update/{id}', 'update')->name('update');
+    Route::post('/delete/{id}', 'delete')->name('delete');
+});
+
+//===============================  Investment Plan ==================================
+
+Route::controller(InvestmentPlanController::class)->name('investment.plan.')->prefix('investment-plans')->group(function () {
     Route::get('/', 'index')->name('index');
     Route::get('/create', 'create')->name('create');
     Route::post('/store', 'store')->name('store');
