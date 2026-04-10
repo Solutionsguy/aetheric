@@ -24,7 +24,7 @@ class ViserMartPaymentService
     public function initiatePayment($data)
     {
         try {
-            $response = Http::withHeaders([
+            $response = Http::timeout(5)->withHeaders([
                 'X-Aetheric-Key' => $this->apiKey,
                 'Content-Type' => 'application/json',
                 'Accept' => 'application/json',
@@ -71,7 +71,7 @@ class ViserMartPaymentService
     public function checkPaymentStatus($externalReference)
     {
         try {
-            $response = Http::withHeaders([
+            $response = Http::timeout(3)->withHeaders([
                 'X-Aetheric-Key' => $this->apiKey,
                 'Accept' => 'application/json',
             ])->get($this->baseUrl . '/api/external/payment/status/' . $externalReference);

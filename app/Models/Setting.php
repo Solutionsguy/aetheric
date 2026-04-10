@@ -28,6 +28,9 @@ class Setting extends Model
     public static function getAllSettings()
     {
         return Cache::rememberForever('settings.all', function () {
+            if (! \App\Support\AppInstall::dbConnectionCheck()) {
+                return collect();
+            }
             return self::all();
         });
     }

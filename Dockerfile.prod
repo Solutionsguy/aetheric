@@ -1,0 +1,48 @@
+# Multi-stage build for production
+# Stage 1: Builder
+FROM php:8.4-fpm as builder
+
+RUN apt-get update && apt-get install -y \
+    git curl libpq-dev libpng-dev libonig-dev libxml2-dev libzip-dev zip unzip \
+    && docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd zip xml \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+
+WORKDIR /var/www
+
+COPY modules/ /var/www/modules/
+COPY composer.json ./
+
+RUN composer install --no-interaction --no-scripts --prefer-dist --ignore-platform-reqs --no-autoloader
+
+COPY . .
+
+RUN composer dump-autoload --optimize
+
+# Stage 2: Runtime
+FROM php:8.4-fpm
+
+RUN apt-get update && apt-get install -y \
+    curl libpq-dev libpng-dev libonig-dev libxml2-dev libzip-dev zip unzip \
+    && docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd zip xml \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /var/www
+
+# Copy from builder
+COPY --from=builder /var/www /var/www
+
+# Copy entrypoint
+COPY docker/entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
+# Set proper permissions
+RUN chown -R www-data:www-data /var/www \
+    && chmod -R 775 /var/www/storage /var/www/bootstrap/cache
+
+USER www-data
+
+ENTRYPOINT ["entrypoint.sh"]
+EXPOSE 9000
+CMD ["php-fpm"]

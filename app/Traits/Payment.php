@@ -78,6 +78,7 @@ trait Payment
         if ($status == 'Success' && $tnxInfo->type == TxnType::PlanPurchased) {
             $plan = SubscriptionPlan::find($tnxInfo->plan_id);
             $this->executePlanPurchaseProcess($tnxInfo->user, $plan, $tnxInfo);
+            (new Txn)->update($tnx, TxnStatus::Success, $tnxInfo->user_id);
         }
 
         if ($status == 'Pending') {
@@ -109,8 +110,6 @@ trait Payment
             return false;
         }
 
-        (new Txn)->update($ref, TxnStatus::Success, $txnInfo->user_id);
-
         // If this transaction was a subscription plan purchase via an automatic gateway,
         // we must activate/record the plan here as well (paymentNotify() is bypassed).
         if ($txnInfo->type == TxnType::PlanPurchased) {
@@ -119,6 +118,8 @@ trait Payment
                 $this->executePlanPurchaseProcess($txnInfo->user, $plan, $txnInfo);
             }
         }
+
+        (new Txn)->update($ref, TxnStatus::Success, $txnInfo->user_id);
 
         // Deposit referral bounty: pay only for actual deposits.
         // If you also want plan purchases to be treated as deposits, we handle that below.

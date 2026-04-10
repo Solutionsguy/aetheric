@@ -11,7 +11,7 @@
 .dashboard-bg,
 .auth-body {
     &.dark-theme {
-        background: linear-gradient(108.51deg, #0B0F2C 1.88%, #050611 98.3%);
+        background: linear-gradient(108.51deg, #0B2C1A 1.88%, #051106 98.3%);
     }
 }
 
@@ -75,20 +75,20 @@
     }
 
     .sidebar-wrapper {
-        background: $liberty-blue;
-        box-shadow: 4px 0px 55px rgba(86, 58, 239, 0.04);
+        background: #0a1f15;
+        box-shadow: 4px 0px 55px rgba(16, 185, 129, 0.04);
     }
 
     .user-sidebar {
         .site-logo {
-            background: $liberty-blue;
+            background: #0a1f15;
             border-bottom: 1px solid rgba($color: $white, $alpha: .08);
         }
     }
 
     // Sidebar toggle 
     .toggle-sidebar {
-        background: $liberty-blue;
+        background: #0a1f15;
 
         // bar icon
         .bar-icon {
@@ -138,7 +138,7 @@
     .withdraw-modal,
     .profile-delete-modal {
         .modal-content {
-            background: $liberty-blue;
+            background: #0a1f15;
         }
     }
 
@@ -196,7 +196,7 @@
 
     // site card style
     .site-card {
-        background: $liberty-blue;
+        background: #0a1f15;
         box-shadow: none;
     }
 
@@ -246,7 +246,7 @@
     }
 
     .notifications-item {
-        background: $liberty-blue;
+        background: #0a1f15;
         border: 1px solid rgba(173, 171, 168, 0.1);
     }
 
@@ -483,7 +483,7 @@
     }
 
     .add-gateway-thumb {
-        background-color: $liberty-blue;
+        background-color: #0a1f15;
     }
 
     // Input field style
@@ -555,12 +555,12 @@
                 color: rgba($white, $alpha: .7);
 
                 &:hover {
-                    background-color: $liberty-blue;
+                    background-color: #0a1f15;
                 }
 
                 &.selected {
                     &.focus {
-                        background-color: $liberty-blue;
+                        background-color: #0a1f15;
                     }
                 }
             }
@@ -615,7 +615,7 @@
         }
 
         .ui-state-hover {
-            background-color: $liberty-blue;
+            background-color: #0a1f15;
             color: $white;
         }
     }
@@ -646,7 +646,7 @@
 
     // table style css
     .table>:not(caption)>*>* {
-        background-color: $liberty-blue;
+        background-color: #0a1f15;
         color: $white;
     }
 
@@ -689,14 +689,14 @@
 
         .input-field {
             input {
-                background: $liberty-blue;
+                background: #0a1f15;
                 border: 1px solid rgba(0, 0, 0, 0.1);
             }
         }
 
         .input-select {
             .nice-select {
-                background: $liberty-blue;
+                background: #0a1f15;
                 border: 1px solid rgba(0, 0, 0, 0.1);
             }
         }
@@ -723,14 +723,14 @@
 
         .input-field {
             input {
-                background: $liberty-blue;
+                background: #0a1f15;
                 border: 1px solid rgba($white, $alpha: 0.1);
             }
         }
 
         .input-select {
             .nice-select {
-                background: $liberty-blue;
+                background: #0a1f15;
                 border: 1px solid rgba($white, $alpha: 0.1);
             }
         }
@@ -745,7 +745,7 @@
 
     // referral style css
     .referral-share-item {
-        background: $liberty-blue;
+        background: #0a1f15;
         box-shadow: none;
     }
 
@@ -772,7 +772,7 @@
     }
 
     .two-factor-auth-wrapper {
-        background: $liberty-blue;
+        background: #0a1f15;
 
         .qr-code {
             .white-qr-img {
@@ -804,21 +804,21 @@
     .support-ticket-form-grid {
         .input-select {
             .nice-select {
-                background: $liberty-blue;
+                background: #0a1f15;
                 border: 0;
             }
         }
 
         .input-field {
             input {
-                background: $liberty-blue;
+                background: #0a1f15;
                 border: 0;
             }
         }
 
         .site-btn {
             &.black-btn {
-                background: $liberty-blue;
+                background: #0a1f15;
             }
         }
     }
@@ -878,7 +878,7 @@
     .auth-wrapper {
         .contents-inner {
             .content {
-                background-color: $liberty-blue;
+                background-color: #0a1f15;
                 box-shadow: none;
 
                 .forgot {
@@ -997,7 +997,7 @@
         }
 
         .advertisement-calc {
-            background: $liberty-blue;
+            background: #0a1f15;
             border: 1px solid rgba(0, 0, 0, 0.04);
         }
     }

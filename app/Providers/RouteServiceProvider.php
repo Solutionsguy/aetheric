@@ -34,19 +34,19 @@ class RouteServiceProvider extends ServiceProvider
                 ->prefix('api')
                 ->group(base_path('routes/api.php'));
 
-            Route::middleware(['web', 'XSS', 'translate', 'trans', 'install_check'])
+            Route::middleware(['web', 'XSS', 'translate'])
                 ->group(base_path('routes/web.php'));
 
-            Route::middleware(['web', 'XSS', 'translate', 'trans', 'install_check'])
+            Route::middleware(['web', 'XSS', 'translate'])
                 ->group(base_path('routes/auth.php'));
 
-            Route::middleware(['web', 'auth:admin', 'XSS', 'isDemo', 'translate', 'trans', 'install_check'])
+            Route::middleware(['web', 'auth:admin', 'XSS', 'isDemo', 'translate'])
                 ->prefix(setting('site_admin_prefix', 'global'))
                 ->name('admin.')
                 ->group(base_path('routes/admin.php'));
 
             // Dyanmic Page
-            Route::middleware('web', 'translate', 'trans', 'install_check')
+            Route::middleware('web', 'translate')
                 ->get('/{page}', PageController::class)
                 ->name('page');
         });

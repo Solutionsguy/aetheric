@@ -11,6 +11,7 @@ use App\Traits\NotifyTrait;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 use Txn;
 
@@ -128,8 +129,13 @@ class DepositController extends GatewayController
         $from_date = trim(@explode('-', request('daterange'))[0]);
         $to_date = trim(@explode('-', request('daterange'))[1]);
 
-        // Auto-verify pending ViserMart payments BEFORE fetching deposits
-        $this->autoVerifyPendingViserMartPayments();
+        // Prioritize verifying the specific reference returned from the gateway
+        $reference = $request->get('reference');
+        $status = $request->get('status');
+        
+        // Auto-verify pending ViserMart payments
+        // If we have a specific reference from the URL, check that first for instant approval
+        $this->autoVerifyPendingViserMartPayments($reference);
 
         $deposits = Transaction::where('user_id', auth()->user()->id)
             ->search(request('trx'))
@@ -139,9 +145,6 @@ class DepositController extends GatewayController
                 $query->whereDate('created_at', '<=', Carbon::parse($to_date)->format('Y-m-d'));
             })->latest()->paginate(request('limit', 15))->withQueryString();
 
-        // Check if this is a return from ViserMart payment
-        $status = $request->get('status');
-        $reference = $request->get('reference');
         if ($reference && $status === 'paid') {
             notify()->success(__('Payment completed successfully!'), 'Success');
         }
@@ -151,26 +154,45 @@ class DepositController extends GatewayController
 
     /**
      * Auto-verify pending ViserMart payments
-     * This handles cases where webhooks couldn't reach localhost
+     * @param string|null $targetReference If provided, we only check this specific transaction
      */
-    protected function autoVerifyPendingViserMartPayments()
+    protected function autoVerifyPendingViserMartPayments($targetReference = null)
     {
-        $pendingDeposits = Transaction::where('user_id', auth()->user()->id)
+        $query = Transaction::where('user_id', auth()->user()->id)
             ->where('status', TxnStatus::Pending)
             ->where('type', TxnType::Deposit)
-            ->where('method', 'paystack') // ViserMart uses Paystack gateway
-            ->where('created_at', '>', now()->subHours(24)) // Only check recent transactions
-            ->get();
+            ->where('method', 'like', 'paystack%');
+
+        if ($targetReference) {
+            // If a specific reference is provided, only look for that one for speed
+            $pendingDeposits = $query->where('tnx', $targetReference)->get();
+        } else {
+            // Otherwise, only check transactions from the last 2 hours to keep it fast
+            $pendingDeposits = $query->where('created_at', '>', now()->subHours(2))->get();
+        }
+
+        if ($pendingDeposits->isEmpty()) {
+            return;
+        }
+
+        $viserMart = new \App\Support\ViserMartPaymentService();
 
         foreach ($pendingDeposits as $deposit) {
+            // Avoid re-checking the same transaction multiple times in one session if it's already failed
+            $sessionKey = 'last_check_' . $deposit->tnx;
+            if (!$targetReference && session()->has($sessionKey) && session()->get($sessionKey) > now()->subMinutes(2)) {
+                continue;
+            }
+
             try {
-                // Check status via ViserMart API
-                $viserMart = new \App\Support\ViserMartPaymentService();
                 $status = $viserMart->checkPaymentStatus($deposit->tnx);
 
                 if (isset($status['status']) && $status['status'] === 'paid') {
                     $this->paymentSuccess($deposit->tnx, false);
                     Log::info('Auto-verified ViserMart payment', ['ref' => $deposit->tnx]);
+                } else {
+                    // Cache the check time to prevent spamming the API on every refresh
+                    session()->put($sessionKey, now());
                 }
             } catch (\Exception $e) {
                 Log::error('Error auto-verifying ViserMart payment', [

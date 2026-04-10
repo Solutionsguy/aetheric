@@ -15,6 +15,16 @@
 
     RewriteEngine On
 
+    # Forward asset requests to public/ folder
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(global|frontend|backend|landing_theme)/(.*)$ public/assets/$1/$2 [L]
+
+    # Forward assets requests to public/ folder
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^assets/(.*)$ public/assets/$1 [L]
+
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]

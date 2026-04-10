@@ -104,14 +104,14 @@ class SubscriptionController extends GatewayController
                     }
                 }
 
-                $txnInfo = (new Txn)->new($planPrice, $charge, $finalAmount, $gatewayInfo->name, $plan->name.' Purchased', TxnType::PlanPurchased, TxnStatus::Pending, $payCurrency, $payAmount, $user->id, null, 'User', $manualData ?? [], planId: $plan->id);
+                $txnInfo = (new Txn)->new($planPrice, $charge, $finalAmount, $gatewayInfo->name, $plan->name.' Purchased', TxnType::PlanPurchased, TxnStatus::Pending, $payCurrency, $payAmount, $user->id, null, 'User', $manualData ?? [], 'none', null, null, false, $plan->id);
                 DB::commit();
 
                 return self::depositAutoGateway($request->get('gateway_code'), $txnInfo);
             }
 
             // Execute plan purchase process
-            $txnInfo = (new Txn)->new($planPrice, 0, $planPrice, 'system', $plan->name.' Purchased', TxnType::PlanPurchased, TxnStatus::Success, null, null, $user->id, planId: $plan->id);
+            $txnInfo = (new Txn)->new($planPrice, 0, $planPrice, 'system', $plan->name.' Purchased', TxnType::PlanPurchased, TxnStatus::Success, null, null, $user->id, null, 'User', [], 'none', null, null, false, $plan->id);
             $this->executePlanPurchaseProcess($user, $plan, $txnInfo);
 
             $shortcodes = [

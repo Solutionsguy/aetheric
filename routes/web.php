@@ -195,7 +195,7 @@ Route::get('notification-tune', [AppController::class, 'notificationTune'])->nam
 Route::get('site-cron', [CronJobController::class, 'runCronJobs'])->name('cron.job');
 
 // Update System
-Route::get('update', UpdateController::class)->middleware(['web', 'auth:admin', 'XSS', 'isDemo', 'trans', 'install_check'])->name('update');
+Route::get('update', UpdateController::class)->middleware(['web', 'auth:admin', 'XSS', 'isDemo', 'translate'])->name('update');
 
 // Paystack manual verify (for localhost testing)
 Route::get('payment/verify', [\App\Http\Controllers\Frontend\PaystackVerifyController::class, 'verify'])->name('payment.verify');

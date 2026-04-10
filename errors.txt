@@ -1,0 +1,594 @@
+
+*** System restart required ***
+  _____
+ / ___/___  _  _ _____ _   ___  ___
+| |   / _ \| \| |_   _/ \ | _ )/ _ \
+| |__| (_) | .` | | |/ _ \| _ \ (_) |
+ \____\___/|_|\_| |_/_/ \_|___/\___/
+
+Welcome!
+
+This server is hosted by Contabo. If you have any questions or need help,
+please don't hesitate to contact us at support@contabo.com.
+
+Last login: Wed Mar 25 11:41:16 2026 from 41.90.141.249
+root@aetheric-app:~# /var/www/aetheric8080
+-bash: /var/www/aetheric8080: Is a directory
+root@aetheric-app:~# cd
+root@aetheric-app:~# cd /var/www/aetheric8080
+root@aetheric-app:/var/www/aetheric8080# /var/www/aetheric8080
+-bash: /var/www/aetheric8080: Is a directory
+root@aetheric-app:/var/www/aetheric8080# /var/www/aetheric8080
+-bash: /var/www/aetheric8080: Is a directory
+root@aetheric-app:/var/www/aetheric8080# sudo chown -R $USER:$USER /var/www/solidnew
+chown: cannot access '/var/www/solidnew': No such file or directory
+root@aetheric-app:/var/www/aetheric8080# sudo chown -R $USER:$USER /var/www/aetheric8080
+root@aetheric-app:/var/www/aetheric8080# composer install --no-dev --optimize-autoloader
+Do not run Composer as root/super user! See https://getcomposer.org/root for details
+Continue as root/super user [yes]?
+Installing dependencies from lock file
+Verifying lock file contents can be installed on current platform.
+Nothing to install, update or remove
+Package rickselby/laravel-gate-cache is abandoned, you should avoid using it. No replacement was suggested.
+Generating optimized autoload files
+Class Coinremitter\Coinremitter located in ./modules/Payment/Coinremitter/src/Coinremitter.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Coinremitter\CoinremiterServiceProvider located in ./modules/Payment/Coinremitter/src/CoinremiterServiceProvider.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Tests\BaseTest located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/tests/BaseTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Tests\WebhookTest located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/tests/WebhookTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Tests\LightningInternalNodeTest located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/tests/LightningInternalNodeTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Util\PreciseNumber located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Util/PreciseNumber.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Http\CurlClient located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Http/CurlClient.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Http\Response located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Http/Response.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Http\ResponseInterface located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Http/ResponseInterface.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Http\ClientInterface located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Http/ClientInterface.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Client\Store located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Client/Store.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Client\Webhook located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Client/Webhook.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Client\AbstractStorePaymentMethodClient located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Client/AbstractStorePaymentMethodClient.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Client\LightningInternalNode located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Client/LightningInternalNode.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Client\StoreOnChainWallet located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Client/StoreOnChainWallet.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Client\StorePaymentMethodLightningNetwork located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Client/StorePaymentMethodLightningNetwork.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Client\User located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Client/User.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Client\StorePaymentMethodOnChain located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Client/StorePaymentMethodOnChain.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Client\LightningStore located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Client/LightningStore.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Client\Server located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Client/Server.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Client\PullPayment located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Client/PullPayment.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Client\Notification located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Client/Notification.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Client\ApiKey located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Client/ApiKey.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Client\Miscellaneous located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Client/Miscellaneous.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Client\Health located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Client/Health.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Client\InvoiceCheckoutOptions located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Client/InvoiceCheckoutOptions.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Client\Invoice located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Client/Invoice.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Client\StorePaymentMethod located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Client/StorePaymentMethod.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Client\AbstractClient located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Client/AbstractClient.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Exception\RequestException located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Exception/RequestException.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Exception\ForbiddenException located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Exception/ForbiddenException.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Exception\BTCPayException located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Exception/BTCPayException.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Exception\BadRequestException located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Exception/BadRequestException.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Exception\ConnectException located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Exception/ConnectException.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Result\LightningNode located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Result/LightningNode.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Result\Store located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Result/Store.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Result\WebhookAuthorizedEvents located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Result/WebhookAuthorizedEvents.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Result\WebhookDeliveryList located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Result/WebhookDeliveryList.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Result\Webhook located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Result/Webhook.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Result\StoreOnChainWalletTransactionDestinationList located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Result/StoreOnChainWalletTransactionDestinationList.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Result\InvoicePaymentMethod located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Result/InvoicePaymentMethod.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Result\LightningPayment located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Result/LightningPayment.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Result\StoreOnChainWallet located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Result/StoreOnChainWallet.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Result\StorePaymentMethodLightningNetwork located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Result/StorePaymentMethodLightningNetwork.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Result\LightningChannelList located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Result/LightningChannelList.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Result\User located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Result/User.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Result\Address located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Result/Address.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Result\StorePaymentMethodOnChain located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Result/StorePaymentMethodOnChain.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Result\LanguageCodeList located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Result/LanguageCodeList.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Result\PullPaymentPayout located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Result/PullPaymentPayout.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Result\PullPaymentPayoutList located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Result/PullPaymentPayoutList.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Result\PullPaymentList located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Result/PullPaymentList.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Result\PullPayment located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Result/PullPayment.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Result\Notification located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Result/Notification.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Result\AbstractStorePaymentMethodResult located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Result/AbstractStorePaymentMethodResult.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Result\ApiKey located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Result/ApiKey.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Result\StoreOnChainWalletTransactionList located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Result/StoreOnChainWalletTransactionList.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Result\StoreOnChainWalletUTXOList located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Result/StoreOnChainWalletUTXOList.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Result\WebhookCreated located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Result/WebhookCreated.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Result\ServerInfo located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Result/ServerInfo.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Result\StoreOnChainWalletTransaction located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Result/StoreOnChainWalletTransaction.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Result\StoreOnChainWalletTransactionDestination located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Result/StoreOnChainWalletTransactionDestination.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Result\LanguageCode located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Result/LanguageCode.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Result\StorePaymentMethodCollection located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Result/StorePaymentMethodCollection.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Result\AbstractListResult located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Result/AbstractListResult.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Result\AddressList located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Result/AddressList.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Result\PermissionMetadata located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Result/PermissionMetadata.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Result\WebhookList located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Result/WebhookList.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Result\StoreOnChainWalletAddress located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Result/StoreOnChainWalletAddress.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Result\InvoiceList located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Result/InvoiceList.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Result\LightningChannel located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Result/LightningChannel.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Result\LightningInvoice located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Result/LightningInvoice.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Result\InvoicePayment located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Result/InvoicePayment.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Result\Invoice located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Result/Invoice.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Result\StoreOnChainWalletFeeRate located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Result/StoreOnChainWalletFeeRate.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Result\AbstractResult located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Result/AbstractResult.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Result\NotificationList located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Result/NotificationList.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Result\StoreOnChainWalletUTXO located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Result/StoreOnChainWalletUTXO.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Result\InvoiceCheckoutHTML located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Result/InvoiceCheckoutHTML.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BTCPayServer\Result\WebhookDelivery located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/src/Result/WebhookDelivery.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Notifications located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/examples/notifications.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class StoreOnChainWallets located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/examples/store_onchain_wallet.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class LightningInternalNodes located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/examples/lightning_internal_node.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class LightningStores located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/examples/lightning_store.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class PullPayments located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/examples/payout_usage.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class HealthClass located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/examples/health.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Misc located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/examples/miscellaneous.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WebhookExample located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/examples/webhook.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Users located in ./modules/Payment/Btcpayserver/btcpayserver-greenfield-php/examples/user_usage.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Modules\Payment\CoinPayments\CoinPaymentsAPI located in ./modules/Payment/Coinpayments/coinpayments.inc.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Anand\LaravelPaytmWallet\Facades\PaytmWallet located in ./modules/Payment/Paytm/laravel-paytm-wallet/src/Facades/PaytmWallet.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Anand\LaravelPaytmWallet\Providers\StatusCheckProvider located in ./modules/Payment/Paytm/laravel-paytm-wallet/src/Providers/StatusCheckProvider.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Anand\LaravelPaytmWallet\Providers\PaytmAppProvider located in ./modules/Payment/Paytm/laravel-paytm-wallet/src/Providers/PaytmAppProvider.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Anand\LaravelPaytmWallet\Providers\PaytmWalletProvider located in ./modules/Payment/Paytm/laravel-paytm-wallet/src/Providers/PaytmWalletProvider.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Anand\LaravelPaytmWallet\Providers\RefundStatusCheckProvider located in ./modules/Payment/Paytm/laravel-paytm-wallet/src/Providers/RefundStatusCheckProvider.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Anand\LaravelPaytmWallet\Providers\RefundPaymentProvider located in ./modules/Payment/Paytm/laravel-paytm-wallet/src/Providers/RefundPaymentProvider.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Anand\LaravelPaytmWallet\Providers\BalanceCheckProvider located in ./modules/Payment/Paytm/laravel-paytm-wallet/src/Providers/BalanceCheckProvider.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Anand\LaravelPaytmWallet\Providers\ReceivePaymentProvider located in ./modules/Payment/Paytm/laravel-paytm-wallet/src/Providers/ReceivePaymentProvider.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Anand\LaravelPaytmWallet\Contracts\Factory located in ./modules/Payment/Paytm/laravel-paytm-wallet/src/Contracts/Factory.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Anand\LaravelPaytmWallet\Contracts\Provider located in ./modules/Payment/Paytm/laravel-paytm-wallet/src/Contracts/Provider.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Anand\LaravelPaytmWallet\Traits\HasTransactionStatus located in ./modules/Payment/Paytm/laravel-paytm-wallet/src/Traits/HasTransactionStatus.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Anand\LaravelPaytmWallet\PaytmWalletManager located in ./modules/Payment/Paytm/laravel-paytm-wallet/src/PaytmWalletManager.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Anand\LaravelPaytmWallet\PaytmWalletServiceProvider located in ./modules/Payment/Paytm/laravel-paytm-wallet/src/PaytmWalletServiceProvider.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Binance\API located in ./modules/Payment/Binance/php-binance-api.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Tests\TransferTest located in ./modules/Payment/Razorpay/razorpay/tests/TransferTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Tests\RequestTest located in ./modules/Payment/Razorpay/razorpay/tests/RequestTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Tests\EmandateTest located in ./modules/Payment/Razorpay/razorpay/tests/EmandateTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Tests\SettlementTest located in ./modules/Payment/Razorpay/razorpay/tests/SettlementTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Tests\ItemTest located in ./modules/Payment/Razorpay/razorpay/tests/ItemTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Tests\CustomerTest located in ./modules/Payment/Razorpay/razorpay/tests/CustomerTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Tests\InvoiceTest located in ./modules/Payment/Razorpay/razorpay/tests/InvoiceTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Tests\TestCase located in ./modules/Payment/Razorpay/razorpay/tests/TestCase.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Tests\SubscriptionTest located in ./modules/Payment/Razorpay/razorpay/tests/SubscriptionTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Tests\OrdersTest located in ./modules/Payment/Razorpay/razorpay/tests/OrdersTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Tests\VirtualAccountTest located in ./modules/Payment/Razorpay/razorpay/tests/VirtualAccountTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Tests\ApiTest located in ./modules/Payment/Razorpay/razorpay/tests/ApiTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Tests\CoverageTest located in ./modules/Payment/Razorpay/razorpay/tests/CoverageTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Tests\TokenTest located in ./modules/Payment/Razorpay/razorpay/tests/TokenTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Tests\AddonTest located in ./modules/Payment/Razorpay/razorpay/tests/AddonTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Tests\PaymentLinkTest located in ./modules/Payment/Razorpay/razorpay/tests/PaymentLinkTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Tests\RegisterEmandateTest located in ./modules/Payment/Razorpay/razorpay/tests/RegisterEmandateTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Tests\PartnerTest located in ./modules/Payment/Razorpay/razorpay/tests/PartnerTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Tests\QrCodeTest located in ./modules/Payment/Razorpay/razorpay/tests/QrCodeTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Tests\PlanTest located in ./modules/Payment/Razorpay/razorpay/tests/PlanTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Tests\SignatureVerificationTest located in ./modules/Payment/Razorpay/razorpay/tests/SignatureVerificationTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Tests\PaymentTest located in ./modules/Payment/Razorpay/razorpay/tests/PaymentTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Tests\PaperNachTest located in ./modules/Payment/Razorpay/razorpay/tests/PaperNachTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Tests\FundTest located in ./modules/Payment/Razorpay/razorpay/tests/FundTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Tests\UpiTest located in ./modules/Payment/Razorpay/razorpay/tests/UpiTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Tests\RegisterNachTest located in ./modules/Payment/Razorpay/razorpay/tests/RegisterNachTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Tests\CardTest located in ./modules/Payment/Razorpay/razorpay/tests/CardTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Tests\RefundTest located in ./modules/Payment/Razorpay/razorpay/tests/RefundTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Api\Stakeholder located in ./modules/Payment/Razorpay/razorpay/src/Stakeholder.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Api\Request located in ./modules/Payment/Razorpay/razorpay/src/Request.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Api\Item located in ./modules/Payment/Razorpay/razorpay/src/Item.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Api\Webhook located in ./modules/Payment/Razorpay/razorpay/src/Webhook.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Api\FundAccount located in ./modules/Payment/Razorpay/razorpay/src/FundAccount.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Api\Resource located in ./modules/Payment/Razorpay/razorpay/src/Resource.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Api\Api located in ./modules/Payment/Razorpay/razorpay/src/Api.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Api\PaymentLink located in ./modules/Payment/Razorpay/razorpay/src/PaymentLink.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Api\Card located in ./modules/Payment/Razorpay/razorpay/src/Card.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Api\Entity located in ./modules/Payment/Razorpay/razorpay/src/Entity.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Api\Subscription located in ./modules/Payment/Razorpay/razorpay/src/Subscription.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Api\VirtualAccount located in ./modules/Payment/Razorpay/razorpay/src/VirtualAccount.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Api\Errors\GatewayError located in ./modules/Payment/Razorpay/razorpay/src/Errors/GatewayError.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Api\Errors\Error located in ./modules/Payment/Razorpay/razorpay/src/Errors/Error.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Api\Errors\ErrorCode located in ./modules/Payment/Razorpay/razorpay/src/Errors/ErrorCode.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Api\Errors\ServerError located in ./modules/Payment/Razorpay/razorpay/src/Errors/ServerError.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Api\Errors\BadRequestError located in ./modules/Payment/Razorpay/razorpay/src/Errors/BadRequestError.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Api\Errors\SignatureVerificationError located in ./modules/Payment/Razorpay/razorpay/src/Errors/SignatureVerificationError.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Api\Addon located in ./modules/Payment/Razorpay/razorpay/src/Addon.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Api\Transfer located in ./modules/Payment/Razorpay/razorpay/src/Transfer.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Api\ArrayableInterface located in ./modules/Payment/Razorpay/razorpay/src/ArrayableInterface.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Api\Product located in ./modules/Payment/Razorpay/razorpay/src/Product.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Api\Payment located in ./modules/Payment/Razorpay/razorpay/src/Payment.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Api\Collection located in ./modules/Payment/Razorpay/razorpay/src/Collection.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Api\Plan located in ./modules/Payment/Razorpay/razorpay/src/Plan.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Api\Iin located in ./modules/Payment/Razorpay/razorpay/src/Iin.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Api\Utility located in ./modules/Payment/Razorpay/razorpay/src/Utility.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Api\PaymentPage located in ./modules/Payment/Razorpay/razorpay/src/PaymentPage.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Api\Refund located in ./modules/Payment/Razorpay/razorpay/src/Refund.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Api\Invoice located in ./modules/Payment/Razorpay/razorpay/src/Invoice.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Api\Account located in ./modules/Payment/Razorpay/razorpay/src/Account.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Api\Token located in ./modules/Payment/Razorpay/razorpay/src/Token.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Api\Customer located in ./modules/Payment/Razorpay/razorpay/src/Customer.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Api\Settlement located in ./modules/Payment/Razorpay/razorpay/src/Settlement.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Api\Order located in ./modules/Payment/Razorpay/razorpay/src/Order.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Api\QrCode located in ./modules/Payment/Razorpay/razorpay/src/QrCode.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Razorpay\Api\Test\RazorpayTest located in ./modules/Payment/Razorpay/razorpay/non_composer_tests/RazorpayTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Requests located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/library/Requests.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Proxy\Http located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Proxy/Http.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Exception located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Exception.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Transport located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Transport.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Session located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Session.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Port located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Port.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Autoload located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Autoload.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Iri located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Iri.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Ssl located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Ssl.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Auth located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Auth.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Auth\Basic located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Auth/Basic.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Requests located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Requests.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Capability located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Capability.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Response located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Response.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Proxy located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Proxy.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Transport\Fsockopen located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Transport/Fsockopen.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Transport\Curl located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Transport/Curl.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\HookManager located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/HookManager.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Response\Headers located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Response/Headers.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Utility\CaseInsensitiveDictionary located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Utility/CaseInsensitiveDictionary.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Utility\InputValidator located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Utility/InputValidator.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Utility\FilteredIterator located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Utility/FilteredIterator.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Ipv6 located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Ipv6.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\IdnaEncoder located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/IdnaEncoder.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Exception\Transport located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Exception/Transport.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Exception\InvalidArgument located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Exception/InvalidArgument.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Exception\Http\Status505 located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Exception/Http/Status505.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Exception\Http\StatusUnknown located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Exception/Http/StatusUnknown.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Exception\Http\Status429 located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Exception/Http/Status429.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Exception\Http\Status412 located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Exception/Http/Status412.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Exception\Http\Status306 located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Exception/Http/Status306.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Exception\Http\Status502 located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Exception/Http/Status502.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Exception\Http\Status411 located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Exception/Http/Status411.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Exception\Http\Status407 located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Exception/Http/Status407.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Exception\Http\Status305 located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Exception/Http/Status305.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Exception\Http\Status401 located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Exception/Http/Status401.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Exception\Http\Status403 located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Exception/Http/Status403.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Exception\Http\Status503 located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Exception/Http/Status503.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Exception\Http\Status501 located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Exception/Http/Status501.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Exception\Http\Status428 located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Exception/Http/Status428.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Exception\Http\Status406 located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Exception/Http/Status406.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Exception\Http\Status418 located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Exception/Http/Status418.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Exception\Http\Status404 located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Exception/Http/Status404.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Exception\Http\Status405 located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Exception/Http/Status405.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Exception\Http\Status410 located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Exception/Http/Status410.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Exception\Http\Status504 located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Exception/Http/Status504.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Exception\Http\Status511 located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Exception/Http/Status511.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Exception\Http\Status500 located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Exception/Http/Status500.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Exception\Http\Status417 located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Exception/Http/Status417.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Exception\Http\Status402 located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Exception/Http/Status402.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Exception\Http\Status400 located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Exception/Http/Status400.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Exception\Http\Status416 located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Exception/Http/Status416.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Exception\Http\Status409 located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Exception/Http/Status409.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Exception\Http\Status414 located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Exception/Http/Status414.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Exception\Http\Status304 located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Exception/Http/Status304.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Exception\Http\Status431 located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Exception/Http/Status431.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Exception\Http\Status408 located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Exception/Http/Status408.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Exception\Http\Status415 located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Exception/Http/Status415.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Exception\Http\Status413 located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Exception/Http/Status413.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Exception\ArgumentCount located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Exception/ArgumentCount.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Exception\Transport\Curl located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Exception/Transport/Curl.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Exception\Http located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Exception/Http.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Hooks located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Hooks.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Cookie located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Cookie.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class WpOrg\Requests\Cookie\Jar located in ./modules/Payment/Razorpay/razorpay/libs/Requests-2.0.4/src/Cookie/Jar.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\SecurionPayGateway located in ./modules/Payment/SecurionPay/SecurionPayGateway.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Util\ObjectSerializer located in ./modules/Payment/SecurionPay/Util/ObjectSerializer.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Util\SecurionPayAutoloader located in ./modules/Payment/SecurionPay/Util/SecurionPayAutoloader.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Connection\CurlConnection located in ./modules/Payment/SecurionPay/Connection/CurlConnection.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Connection\Connection located in ./modules/Payment/SecurionPay/Connection/Connection.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Connection\WordPressConnection located in ./modules/Payment/SecurionPay/Connection/WordPressConnection.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\AddressRequest located in ./modules/Payment/SecurionPay/Request/AddressRequest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\CrossSaleOfferListRequest located in ./modules/Payment/SecurionPay/Request/CrossSaleOfferListRequest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\PlanUpdateRequest located in ./modules/Payment/SecurionPay/Request/PlanUpdateRequest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\CustomerRequest located in ./modules/Payment/SecurionPay/Request/CustomerRequest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\ShippingRequest located in ./modules/Payment/SecurionPay/Request/ShippingRequest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\CheckoutRequestCustomAmount located in ./modules/Payment/SecurionPay/Request/CheckoutRequestCustomAmount.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\PlanRequest located in ./modules/Payment/SecurionPay/Request/PlanRequest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\PlanListRequest located in ./modules/Payment/SecurionPay/Request/PlanListRequest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\CheckoutRequestSubscription located in ./modules/Payment/SecurionPay/Request/CheckoutRequestSubscription.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\ChargeListRequest located in ./modules/Payment/SecurionPay/Request/ChargeListRequest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\FileUploadListRequest located in ./modules/Payment/SecurionPay/Request/FileUploadListRequest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\BlacklistRuleListRequest located in ./modules/Payment/SecurionPay/Request/BlacklistRuleListRequest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\SubscriptionListRequest located in ./modules/Payment/SecurionPay/Request/SubscriptionListRequest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\RefundListRequest located in ./modules/Payment/SecurionPay/Request/RefundListRequest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\DisputeUpdateRequest located in ./modules/Payment/SecurionPay/Request/DisputeUpdateRequest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\FraudDetailsRequest located in ./modules/Payment/SecurionPay/Request/FraudDetailsRequest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\CreditRequest located in ./modules/Payment/SecurionPay/Request/CreditRequest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\FraudWarningListRequest located in ./modules/Payment/SecurionPay/Request/FraudWarningListRequest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\RefundRequest located in ./modules/Payment/SecurionPay/Request/RefundRequest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\CreditListRequest located in ./modules/Payment/SecurionPay/Request/CreditListRequest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\CheckoutRequestCustomCharge located in ./modules/Payment/SecurionPay/Request/CheckoutRequestCustomCharge.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\BillingRequest located in ./modules/Payment/SecurionPay/Request/BillingRequest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\CheckoutRequest located in ./modules/Payment/SecurionPay/Request/CheckoutRequest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\EventListRequest located in ./modules/Payment/SecurionPay/Request/EventListRequest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\PaymentMethodListRequest located in ./modules/Payment/SecurionPay/Request/PaymentMethodListRequest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\CustomerUpdateRequest located in ./modules/Payment/SecurionPay/Request/CustomerUpdateRequest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\AbstractRequest located in ./modules/Payment/SecurionPay/Request/AbstractRequest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\CheckoutRequestCharge located in ./modules/Payment/SecurionPay/Request/CheckoutRequestCharge.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\SubscriptionUpdateRequest located in ./modules/Payment/SecurionPay/Request/SubscriptionUpdateRequest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\CrossSaleOfferUpdateRequest located in ./modules/Payment/SecurionPay/Request/CrossSaleOfferUpdateRequest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\PaymentMethodRequest located in ./modules/Payment/SecurionPay/Request/PaymentMethodRequest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\DisputeListRequest located in ./modules/Payment/SecurionPay/Request/DisputeListRequest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\SubscriptionRequest located in ./modules/Payment/SecurionPay/Request/SubscriptionRequest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\ChargeUpdateRequest located in ./modules/Payment/SecurionPay/Request/ChargeUpdateRequest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\CreditUpdateRequest located in ./modules/Payment/SecurionPay/Request/CreditUpdateRequest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\CardRequest located in ./modules/Payment/SecurionPay/Request/CardRequest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\FraudCheckDataRequest located in ./modules/Payment/SecurionPay/Request/FraudCheckDataRequest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\SubscriptionCancelRequest located in ./modules/Payment/SecurionPay/Request/SubscriptionCancelRequest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\ThreeDSecureRequest located in ./modules/Payment/SecurionPay/Request/ThreeDSecureRequest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\BlacklistRuleRequest located in ./modules/Payment/SecurionPay/Request/BlacklistRuleRequest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\CheckoutRequestThreeDSecure located in ./modules/Payment/SecurionPay/Request/CheckoutRequestThreeDSecure.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\CaptureRequest located in ./modules/Payment/SecurionPay/Request/CaptureRequest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\TokenRequest located in ./modules/Payment/SecurionPay/Request/TokenRequest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\PayoutTransactionListRequest located in ./modules/Payment/SecurionPay/Request/PayoutTransactionListRequest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\PayoutListRequest located in ./modules/Payment/SecurionPay/Request/PayoutListRequest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\CrossSaleOfferRequestSubscription located in ./modules/Payment/SecurionPay/Request/CrossSaleOfferRequestSubscription.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\CustomerListRequest located in ./modules/Payment/SecurionPay/Request/CustomerListRequest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\CreatedFilter located in ./modules/Payment/SecurionPay/Request/CreatedFilter.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\CrossSaleOfferRequest located in ./modules/Payment/SecurionPay/Request/CrossSaleOfferRequest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\CardListRequest located in ./modules/Payment/SecurionPay/Request/CardListRequest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\ChargeRequest located in ./modules/Payment/SecurionPay/Request/ChargeRequest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\DisputeEvidenceRequest located in ./modules/Payment/SecurionPay/Request/DisputeEvidenceRequest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\ChargeFlowRequest located in ./modules/Payment/SecurionPay/Request/ChargeFlowRequest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\CrossSaleOfferRequestCharge located in ./modules/Payment/SecurionPay/Request/CrossSaleOfferRequestCharge.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Request\CardUpdateRequest located in ./modules/Payment/SecurionPay/Request/CardUpdateRequest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Payment\Securionpay\SecurionpayTxn located in ./modules/Payment/SecurionPay/SecurionpayTxn.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Response\FraudWarning located in ./modules/Payment/SecurionPay/Response/FraudWarning.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Response\DisputeEvidence located in ./modules/Payment/SecurionPay/Response/DisputeEvidence.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Response\BlacklistRule located in ./modules/Payment/SecurionPay/Response/BlacklistRule.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Response\Address located in ./modules/Payment/SecurionPay/Response/Address.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Response\Event located in ./modules/Payment/SecurionPay/Response/Event.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Response\PaymentMethod located in ./modules/Payment/SecurionPay/Response/PaymentMethod.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Response\FastCredit located in ./modules/Payment/SecurionPay/Response/FastCredit.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Response\Card located in ./modules/Payment/SecurionPay/Response/Card.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Response\Subscription located in ./modules/Payment/SecurionPay/Response/Subscription.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Response\AbstractResponse located in ./modules/Payment/SecurionPay/Response/AbstractResponse.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Response\ThreeDSecureInfo located in ./modules/Payment/SecurionPay/Response/ThreeDSecureInfo.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Response\CrossSaleOfferCharge located in ./modules/Payment/SecurionPay/Response/CrossSaleOfferCharge.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Response\Dispute located in ./modules/Payment/SecurionPay/Response/Dispute.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Response\ListResponse located in ./modules/Payment/SecurionPay/Response/ListResponse.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Response\FraudDetails located in ./modules/Payment/SecurionPay/Response/FraudDetails.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Response\CrossSaleOffer located in ./modules/Payment/SecurionPay/Response/CrossSaleOffer.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Response\ChargeFlow located in ./modules/Payment/SecurionPay/Response/ChargeFlow.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Response\Charge located in ./modules/Payment/SecurionPay/Response/Charge.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Response\FraudCheckData located in ./modules/Payment/SecurionPay/Response/FraudCheckData.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Response\DisputeEvidenceDetails located in ./modules/Payment/SecurionPay/Response/DisputeEvidenceDetails.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Response\PayoutTransaction located in ./modules/Payment/SecurionPay/Response/PayoutTransaction.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Response\Plan located in ./modules/Payment/SecurionPay/Response/Plan.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Response\CrossSaleOfferSubscription located in ./modules/Payment/SecurionPay/Response/CrossSaleOfferSubscription.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Response\Billing located in ./modules/Payment/SecurionPay/Response/Billing.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Response\Shipping located in ./modules/Payment/SecurionPay/Response/Shipping.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Response\ChargeWithCrossSale located in ./modules/Payment/SecurionPay/Response/ChargeWithCrossSale.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Response\DeleteResponse located in ./modules/Payment/SecurionPay/Response/DeleteResponse.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Response\ErrorResponse located in ./modules/Payment/SecurionPay/Response/ErrorResponse.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Response\Refund located in ./modules/Payment/SecurionPay/Response/Refund.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Response\ChargeFlowReturn located in ./modules/Payment/SecurionPay/Response/ChargeFlowReturn.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Response\Payout located in ./modules/Payment/SecurionPay/Response/Payout.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Response\Token located in ./modules/Payment/SecurionPay/Response/Token.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Response\Customer located in ./modules/Payment/SecurionPay/Response/Customer.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Response\FileUpload located in ./modules/Payment/SecurionPay/Response/FileUpload.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Response\ChargeFromCrossSale located in ./modules/Payment/SecurionPay/Response/ChargeFromCrossSale.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Response\Credit located in ./modules/Payment/SecurionPay/Response/Credit.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Exception\ConnectionException located in ./modules/Payment/SecurionPay/Exception/ConnectionException.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Exception\SecurionPayException located in ./modules/Payment/SecurionPay/Exception/SecurionPayException.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class SecurionPay\Exception\MappingException located in ./modules/Payment/SecurionPay/Exception/MappingException.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BasicWithPassphraseTest located in ./modules/Payment/BlockIo/block_io-php-3.0.0/tests/BasicWithPassphraseTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class EncryptDecryptTest located in ./modules/Payment/BlockIo/block_io-php-3.0.0/tests/EncryptDecryptTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BitwaspBitcoinMinimalBranchTest located in ./modules/Payment/BlockIo/block_io-php-3.0.0/tests/BitwaspBitcoinMinimalBranchTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class LargerTransactionTest located in ./modules/Payment/BlockIo/block_io-php-3.0.0/tests/LargerTransactionTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BasicWithWIFTest located in ./modules/Payment/BlockIo/block_io-php-3.0.0/tests/BasicWithWIFTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class PrepareTransactionTest located in ./modules/Payment/BlockIo/block_io-php-3.0.0/tests/PrepareTransactionTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BasicCurlTest located in ./modules/Payment/BlockIo/block_io-php-3.0.0/tests/BasicCurlTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BlockIo\APIException located in ./modules/Payment/BlockIo/block_io-php-3.0.0/lib/APIException.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BlockIo\BlockKey located in ./modules/Payment/BlockIo/block_io-php-3.0.0/lib/BlockKey.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class BlockIo\Client located in ./modules/Payment/BlockIo/block_io-php-3.0.0/lib/Client.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Modules\Payment\Monnify\Monnify located in ./modules/Payment/Monnify/Monnify.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Modules\Payment\Nowpayments\NowPaymentsAPI located in ./modules/Payment/Nowpayments/NowPaymentsAPI.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Unit\Adapter\PaymentCapturesTest located in ./modules/Payment/Paypal/src/tests/Unit/Adapter/PaymentCapturesTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Unit\Adapter\ReportingTest located in ./modules/Payment/Paypal/src/tests/Unit/Adapter/ReportingTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Unit\Adapter\ReferencedPayoutsTest located in ./modules/Payment/Paypal/src/tests/Unit/Adapter/ReferencedPayoutsTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Unit\Adapter\BillingPlansTest located in ./modules/Payment/Paypal/src/tests/Unit/Adapter/BillingPlansTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Unit\Adapter\DisputeActionsTest located in ./modules/Payment/Paypal/src/tests/Unit/Adapter/DisputeActionsTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Unit\Adapter\WebHooksTest located in ./modules/Payment/Paypal/src/tests/Unit/Adapter/WebHooksTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Unit\Adapter\WebHooksVerificationTest located in ./modules/Payment/Paypal/src/tests/Unit/Adapter/WebHooksVerificationTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Unit\Adapter\PaymentExperienceWebProfilesTest located in ./modules/Payment/Paypal/src/tests/Unit/Adapter/PaymentExperienceWebProfilesTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Unit\Adapter\OrdersTest located in ./modules/Payment/Paypal/src/tests/Unit/Adapter/OrdersTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Unit\Adapter\PartnerReferralsTest located in ./modules/Payment/Paypal/src/tests/Unit/Adapter/PartnerReferralsTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Unit\Adapter\PaymentAuthorizationsTest located in ./modules/Payment/Paypal/src/tests/Unit/Adapter/PaymentAuthorizationsTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Unit\Adapter\TrackersTest located in ./modules/Payment/Paypal/src/tests/Unit/Adapter/TrackersTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Unit\Adapter\SubscriptionsTest located in ./modules/Payment/Paypal/src/tests/Unit/Adapter/SubscriptionsTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Unit\Adapter\InvoicesSearchTest located in ./modules/Payment/Paypal/src/tests/Unit/Adapter/InvoicesSearchTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Unit\Adapter\CatalogProductsTest located in ./modules/Payment/Paypal/src/tests/Unit/Adapter/CatalogProductsTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Unit\Adapter\WebHooksEventsTest located in ./modules/Payment/Paypal/src/tests/Unit/Adapter/WebHooksEventsTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Unit\Adapter\InvoicesTemplatesTest located in ./modules/Payment/Paypal/src/tests/Unit/Adapter/InvoicesTemplatesTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Unit\Adapter\DisputesTest located in ./modules/Payment/Paypal/src/tests/Unit/Adapter/DisputesTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Unit\Adapter\InvoicesTest located in ./modules/Payment/Paypal/src/tests/Unit/Adapter/InvoicesTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Unit\Adapter\PaymentRefundsTest located in ./modules/Payment/Paypal/src/tests/Unit/Adapter/PaymentRefundsTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Unit\Adapter\PayoutsTest located in ./modules/Payment/Paypal/src/tests/Unit/Adapter/PayoutsTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Unit\Adapter\IdentityTest located in ./modules/Payment/Paypal/src/tests/Unit/Adapter/IdentityTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Unit\ClientTest located in ./modules/Payment/Paypal/src/tests/Unit/ClientTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Unit\AdapterTest located in ./modules/Payment/Paypal/src/tests/Unit/AdapterTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Unit\Client\PaymentCapturesTest located in ./modules/Payment/Paypal/src/tests/Unit/Client/PaymentCapturesTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Unit\Client\ReportingTest located in ./modules/Payment/Paypal/src/tests/Unit/Client/ReportingTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Unit\Client\ReferencedPayoutsTest located in ./modules/Payment/Paypal/src/tests/Unit/Client/ReferencedPayoutsTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Unit\Client\BillingPlansTest located in ./modules/Payment/Paypal/src/tests/Unit/Client/BillingPlansTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Unit\Client\DisputeActionsTest located in ./modules/Payment/Paypal/src/tests/Unit/Client/DisputeActionsTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Unit\Client\WebHooksTest located in ./modules/Payment/Paypal/src/tests/Unit/Client/WebHooksTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Unit\Client\WebHooksVerificationTest located in ./modules/Payment/Paypal/src/tests/Unit/Client/WebHooksVerificationTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Unit\Client\PaymentExperienceWebProfilesTest located in ./modules/Payment/Paypal/src/tests/Unit/Client/PaymentExperienceWebProfilesTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Unit\Client\OrdersTest located in ./modules/Payment/Paypal/src/tests/Unit/Client/OrdersTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Unit\Client\PartnerReferralsTest located in ./modules/Payment/Paypal/src/tests/Unit/Client/PartnerReferralsTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Unit\Client\PaymentAuthorizationsTest located in ./modules/Payment/Paypal/src/tests/Unit/Client/PaymentAuthorizationsTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Unit\Client\TrackersTest located in ./modules/Payment/Paypal/src/tests/Unit/Client/TrackersTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Unit\Client\SubscriptionsTest located in ./modules/Payment/Paypal/src/tests/Unit/Client/SubscriptionsTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Unit\Client\InvoicesSearchTest located in ./modules/Payment/Paypal/src/tests/Unit/Client/InvoicesSearchTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Unit\Client\CatalogProductsTest located in ./modules/Payment/Paypal/src/tests/Unit/Client/CatalogProductsTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Unit\Client\WebHooksEventsTest located in ./modules/Payment/Paypal/src/tests/Unit/Client/WebHooksEventsTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Unit\Client\InvoicesTemplatesTest located in ./modules/Payment/Paypal/src/tests/Unit/Client/InvoicesTemplatesTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Unit\Client\DisputesTest located in ./modules/Payment/Paypal/src/tests/Unit/Client/DisputesTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Unit\Client\InvoicesTest located in ./modules/Payment/Paypal/src/tests/Unit/Client/InvoicesTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Unit\Client\PaymentRefundsTest located in ./modules/Payment/Paypal/src/tests/Unit/Client/PaymentRefundsTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Unit\Client\PayoutsTest located in ./modules/Payment/Paypal/src/tests/Unit/Client/PayoutsTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Unit\Client\IdentityTest located in ./modules/Payment/Paypal/src/tests/Unit/Client/IdentityTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\MockResponsePayloads located in ./modules/Payment/Paypal/src/tests/MockResponsePayloads.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Mocks\Responses\Invoices located in ./modules/Payment/Paypal/src/tests/Mocks/Responses/Invoices.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Mocks\Responses\PaymentCaptures located in ./modules/Payment/Paypal/src/tests/Mocks/Responses/PaymentCaptures.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Mocks\Responses\Payouts located in ./modules/Payment/Paypal/src/tests/Mocks/Responses/Payouts.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Mocks\Responses\Identity located in ./modules/Payment/Paypal/src/tests/Mocks/Responses/Identity.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Mocks\Responses\PartnerReferrals located in ./modules/Payment/Paypal/src/tests/Mocks/Responses/PartnerReferrals.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Mocks\Responses\Reporting located in ./modules/Payment/Paypal/src/tests/Mocks/Responses/Reporting.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Mocks\Responses\BillingPlans located in ./modules/Payment/Paypal/src/tests/Mocks/Responses/BillingPlans.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Mocks\Responses\InvoicesSearch located in ./modules/Payment/Paypal/src/tests/Mocks/Responses/InvoicesSearch.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Mocks\Responses\Subscriptions located in ./modules/Payment/Paypal/src/tests/Mocks/Responses/Subscriptions.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Mocks\Responses\Disputes located in ./modules/Payment/Paypal/src/tests/Mocks/Responses/Disputes.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Mocks\Responses\DisputesActions located in ./modules/Payment/Paypal/src/tests/Mocks/Responses/DisputesActions.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Mocks\Responses\Orders located in ./modules/Payment/Paypal/src/tests/Mocks/Responses/Orders.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Mocks\Responses\PaymentAuthorizations located in ./modules/Payment/Paypal/src/tests/Mocks/Responses/PaymentAuthorizations.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Mocks\Responses\Trackers located in ./modules/Payment/Paypal/src/tests/Mocks/Responses/Trackers.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Mocks\Responses\InvoicesTemplates located in ./modules/Payment/Paypal/src/tests/Mocks/Responses/InvoicesTemplates.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Mocks\Responses\PaymentExperienceWebProfiles located in ./modules/Payment/Paypal/src/tests/Mocks/Responses/PaymentExperienceWebProfiles.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Mocks\Responses\CatalogProducts located in ./modules/Payment/Paypal/src/tests/Mocks/Responses/CatalogProducts.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Mocks\Responses\ReferencedPayouts located in ./modules/Payment/Paypal/src/tests/Mocks/Responses/ReferencedPayouts.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Mocks\Responses\WebHooks located in ./modules/Payment/Paypal/src/tests/Mocks/Responses/WebHooks.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Mocks\Responses\PaymentRefunds located in ./modules/Payment/Paypal/src/tests/Mocks/Responses/PaymentRefunds.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Mocks\Requests\Invoices located in ./modules/Payment/Paypal/src/tests/Mocks/Requests/Invoices.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Mocks\Requests\PaymentCaptures located in ./modules/Payment/Paypal/src/tests/Mocks/Requests/PaymentCaptures.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Mocks\Requests\Payouts located in ./modules/Payment/Paypal/src/tests/Mocks/Requests/Payouts.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Mocks\Requests\Identity located in ./modules/Payment/Paypal/src/tests/Mocks/Requests/Identity.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Mocks\Requests\PartnerReferrals located in ./modules/Payment/Paypal/src/tests/Mocks/Requests/PartnerReferrals.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Mocks\Requests\BillingPlans located in ./modules/Payment/Paypal/src/tests/Mocks/Requests/BillingPlans.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Mocks\Requests\InvoicesSearch located in ./modules/Payment/Paypal/src/tests/Mocks/Requests/InvoicesSearch.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Mocks\Requests\Subscriptions located in ./modules/Payment/Paypal/src/tests/Mocks/Requests/Subscriptions.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Mocks\Requests\Disputes located in ./modules/Payment/Paypal/src/tests/Mocks/Requests/Disputes.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Mocks\Requests\DisputesActions located in ./modules/Payment/Paypal/src/tests/Mocks/Requests/DisputesActions.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Mocks\Requests\Orders located in ./modules/Payment/Paypal/src/tests/Mocks/Requests/Orders.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Mocks\Requests\PaymentAuthorizations located in ./modules/Payment/Paypal/src/tests/Mocks/Requests/PaymentAuthorizations.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Mocks\Requests\Trackers located in ./modules/Payment/Paypal/src/tests/Mocks/Requests/Trackers.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Mocks\Requests\InvoicesTemplates located in ./modules/Payment/Paypal/src/tests/Mocks/Requests/InvoicesTemplates.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Mocks\Requests\PaymentExperienceWebProfiles located in ./modules/Payment/Paypal/src/tests/Mocks/Requests/PaymentExperienceWebProfiles.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Mocks\Requests\CatalogProducts located in ./modules/Payment/Paypal/src/tests/Mocks/Requests/CatalogProducts.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Mocks\Requests\ReferencedPayouts located in ./modules/Payment/Paypal/src/tests/Mocks/Requests/ReferencedPayouts.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Mocks\Requests\WebHooks located in ./modules/Payment/Paypal/src/tests/Mocks/Requests/WebHooks.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Feature\AdapterFeatureTest located in ./modules/Payment/Paypal/src/tests/Feature/AdapterFeatureTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Feature\AdapterBillingPlansPricingHelpersTest located in ./modules/Payment/Paypal/src/tests/Feature/AdapterBillingPlansPricingHelpersTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Feature\AdapterCreateSubscriptionHelpersTest located in ./modules/Payment/Paypal/src/tests/Feature/AdapterCreateSubscriptionHelpersTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\Feature\AdapterConfigTest located in ./modules/Payment/Paypal/src/tests/Feature/AdapterConfigTest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\MockClientClasses located in ./modules/Payment/Paypal/src/tests/MockClientClasses.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Tests\MockRequestPayloads located in ./modules/Payment/Paypal/src/tests/MockRequestPayloads.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\PayPalFacadeAccessor located in ./modules/Payment/Paypal/src/src/PayPalFacadeAccessor.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Facades\PayPal located in ./modules/Payment/Paypal/src/src/Facades/PayPal.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Providers\PayPalServiceProvider located in ./modules/Payment/Paypal/src/src/Providers/PayPalServiceProvider.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Services\PayPal located in ./modules/Payment/Paypal/src/src/Services/PayPal.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Traits\PayPalHttpClient located in ./modules/Payment/Paypal/src/src/Traits/PayPalHttpClient.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Traits\PayPalVerifyIPN located in ./modules/Payment/Paypal/src/src/Traits/PayPalVerifyIPN.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Traits\PayPalRequest located in ./modules/Payment/Paypal/src/src/Traits/PayPalRequest.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Traits\PayPalAPI located in ./modules/Payment/Paypal/src/src/Traits/PayPalAPI.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Traits\PayPalAPI\Invoices located in ./modules/Payment/Paypal/src/src/Traits/PayPalAPI/Invoices.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Traits\PayPalAPI\PaymentCaptures located in ./modules/Payment/Paypal/src/src/Traits/PayPalAPI/PaymentCaptures.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Traits\PayPalAPI\WebHooksVerification located in ./modules/Payment/Paypal/src/src/Traits/PayPalAPI/WebHooksVerification.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Traits\PayPalAPI\Payouts located in ./modules/Payment/Paypal/src/src/Traits/PayPalAPI/Payouts.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Traits\PayPalAPI\Identity located in ./modules/Payment/Paypal/src/src/Traits/PayPalAPI/Identity.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Traits\PayPalAPI\WebHooksEvents located in ./modules/Payment/Paypal/src/src/Traits/PayPalAPI/WebHooksEvents.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Traits\PayPalAPI\PartnerReferrals located in ./modules/Payment/Paypal/src/src/Traits/PayPalAPI/PartnerReferrals.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Traits\PayPalAPI\InvoiceSearch\Filters located in ./modules/Payment/Paypal/src/src/Traits/PayPalAPI/InvoiceSearch/Filters.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Traits\PayPalAPI\Reporting located in ./modules/Payment/Paypal/src/src/Traits/PayPalAPI/Reporting.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Traits\PayPalAPI\BillingPlans located in ./modules/Payment/Paypal/src/src/Traits/PayPalAPI/BillingPlans.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Traits\PayPalAPI\InvoicesSearch located in ./modules/Payment/Paypal/src/src/Traits/PayPalAPI/InvoicesSearch.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Traits\PayPalAPI\Subscriptions located in ./modules/Payment/Paypal/src/src/Traits/PayPalAPI/Subscriptions.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Traits\PayPalAPI\Subscriptions\Helpers located in ./modules/Payment/Paypal/src/src/Traits/PayPalAPI/Subscriptions/Helpers.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Traits\PayPalAPI\Disputes located in ./modules/Payment/Paypal/src/src/Traits/PayPalAPI/Disputes.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Traits\PayPalAPI\DisputesActions located in ./modules/Payment/Paypal/src/src/Traits/PayPalAPI/DisputesActions.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Traits\PayPalAPI\Orders located in ./modules/Payment/Paypal/src/src/Traits/PayPalAPI/Orders.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Traits\PayPalAPI\PaymentAuthorizations located in ./modules/Payment/Paypal/src/src/Traits/PayPalAPI/PaymentAuthorizations.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Traits\PayPalAPI\Trackers located in ./modules/Payment/Paypal/src/src/Traits/PayPalAPI/Trackers.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Traits\PayPalAPI\BillingPlans\PricingSchemes located in ./modules/Payment/Paypal/src/src/Traits/PayPalAPI/BillingPlans/PricingSchemes.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Traits\PayPalAPI\InvoicesTemplates located in ./modules/Payment/Paypal/src/src/Traits/PayPalAPI/InvoicesTemplates.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Traits\PayPalAPI\PaymentExperienceWebProfiles located in ./modules/Payment/Paypal/src/src/Traits/PayPalAPI/PaymentExperienceWebProfiles.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Traits\PayPalAPI\CatalogProducts located in ./modules/Payment/Paypal/src/src/Traits/PayPalAPI/CatalogProducts.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Traits\PayPalAPI\ReferencedPayouts located in ./modules/Payment/Paypal/src/src/Traits/PayPalAPI/ReferencedPayouts.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Traits\PayPalAPI\WebHooks located in ./modules/Payment/Paypal/src/src/Traits/PayPalAPI/WebHooks.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class Srmklive\PayPal\Traits\PayPalAPI\PaymentRefunds located in ./modules/Payment/Paypal/src/src/Traits/PayPalAPI/PaymentRefunds.php does not comply with psr-4 autoloading standard (rule: Payment\ => ./modules/Payment). Skipping.
+Class App\Facades\Notification\Notify located in ./app/Facades/Facades/Notification/Notify.php does not comply with psr-4 autoloading standard (rule: App\ => ./app). Skipping.
+Class App\Facades\Notification\NotifyFacade located in ./app/Facades/Facades/Notification/NotifyFacade.php does not comply with psr-4 autoloading standard (rule: App\ => ./app). Skipping.
+Class App\Facades\Txn\TxnFacade located in ./app/Facades/Facades/Txn/TxnFacade.php does not comply with psr-4 autoloading standard (rule: App\ => ./app). Skipping.
+Class App\Facades\Txn\Txn located in ./app/Facades/Facades/Txn/Txn.php does not comply with psr-4 autoloading standard (rule: App\ => ./app). Skipping.
+Class App\Enums\KYCStatus located in ./app/Enums/Enums/KYCStatus.php does not comply with psr-4 autoloading standard (rule: App\ => ./app). Skipping.
+Class App\Enums\AdsType located in ./app/Enums/Enums/AdsType.php does not comply with psr-4 autoloading standard (rule: App\ => ./app). Skipping.
+Class App\Enums\ReferralType located in ./app/Enums/Enums/ReferralType.php does not comply with psr-4 autoloading standard (rule: App\ => ./app). Skipping.
+Class App\Enums\TxnStatus located in ./app/Enums/Enums/TxnStatus.php does not comply with psr-4 autoloading standard (rule: App\ => ./app). Skipping.
+Class App\Enums\PlanHistoryStatus located in ./app/Enums/Enums/PlanHistoryStatus.php does not comply with psr-4 autoloading standard (rule: App\ => ./app). Skipping.
+Class App\Enums\AdsFor located in ./app/Enums/Enums/AdsFor.php does not comply with psr-4 autoloading standard (rule: App\ => ./app). Skipping.
+Class App\Enums\AdsStatus located in ./app/Enums/Enums/AdsStatus.php does not comply with psr-4 autoloading standard (rule: App\ => ./app). Skipping.
+Class App\Enums\GatewayType located in ./app/Enums/Enums/GatewayType.php does not comply with psr-4 autoloading standard (rule: App\ => ./app). Skipping.
+Class App\Enums\NavigationType located in ./app/Enums/Enums/NavigationType.php does not comply with psr-4 autoloading standard (rule: App\ => ./app). Skipping.
+Class App\Enums\TxnType located in ./app/Enums/Enums/TxnType.php does not comply with psr-4 autoloading standard (rule: App\ => ./app). Skipping.
+Class App\Mail\MailSend located in ./app/Mail/Mail/MailSend.php does not comply with psr-4 autoloading standard (rule: App\ => ./app). Skipping.
+Class App\Rules\Recaptcha located in ./app/Rules/Rules/Recaptcha.php does not comply with psr-4 autoloading standard (rule: App\ => ./app). Skipping.
+Class App\Rules\MatchOldPassword located in ./app/Rules/Rules/MatchOldPassword.php does not comply with psr-4 autoloading standard (rule: App\ => ./app). Skipping.
+Class App\Exceptions\Handler located in ./app/Exceptions/Exceptions/Handler.php does not comply with psr-4 autoloading standard (rule: App\ => ./app). Skipping.
+Class App\View\SiteCurrencyComposer located in ./app/View/View/SiteCurrencyComposer.php does not comply with psr-4 autoloading standard (rule: App\ => ./app). Skipping.
+Class App\Jobs\IpnJob located in ./app/Jobs/Jobs/IpnJob.php does not comply with psr-4 autoloading standard (rule: App\ => ./app). Skipping.
+Class App\Jobs\WithdrawUpdateJob located in ./app/Jobs/Jobs/WithdrawUpdateJob.php does not comply with psr-4 autoloading standard (rule: App\ => ./app). Skipping.
+Class App\Console\Commands\DisableInactiveUsers located in ./app/Console/Console/Commands/DisableInactiveUsers.php does not comply with psr-4 autoloading standard (rule: App\ => ./app). Skipping.
+Class App\Console\Kernel located in ./app/Console/Console/Kernel.php does not comply with psr-4 autoloading standard (rule: App\ => ./app). Skipping.
+Class App\Events\UserReferred located in ./app/Events/Events/UserReferred.php does not comply with psr-4 autoloading standard (rule: App\ => ./app). Skipping.
+Class App\Events\NotificationEvent located in ./app/Events/Events/NotificationEvent.php does not comply with psr-4 autoloading standard (rule: App\ => ./app). Skipping.
+Class App\Events\PushNotificationEvent located in ./app/Events/Events/PushNotificationEvent.php does not comply with psr-4 autoloading standard (rule: App\ => ./app). Skipping.
+Class App\Events\UserNotificationEvent located in ./app/Events/Events/UserNotificationEvent.php does not comply with psr-4 autoloading standard (rule: App\ => ./app). Skipping.
+> Illuminate\Foundation\ComposerScripts::postAutoloadDump
+> @php artisan package:discover --ansi
+PHP Warning:  require_once(/var/www/aetheric8080/bootstrap/app.php): Failed to open stream: No such file or directory in /var/www/aetheric8080/artisan on line 20
+PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/aetheric8080/bootstrap/app.php' (include_path='.:/usr/share/php') in /var/www/aetheric8080/artisan:20
+Stack trace:
+#0 {main}
+  thrown in /var/www/aetheric8080/artisan on line 20
+Script @php artisan package:discover --ansi handling the post-autoload-dump event returned with error code 255
+root@aetheric-app:/var/www/aetheric8080# nano .env
+root@aetheric-app:/var/www/aetheric8080# mysql -u root -p aetheric < DB/aetheric.sql
+Enter password:
+ERROR 1050 (42S01) at line 30: Table 'admins' already exists
+root@aetheric-app:/var/www/aetheric8080# mysql -u root -p -e "CREATE DATABASE aetheric CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
+Enter password:
+ERROR 1007 (HY000) at line 1: Can't create database 'aetheric'; database exists
+root@aetheric-app:/var/www/aetheric8080# mysql -u root -p aetheric < DB/aetheric.sql
+Enter password:
+ERROR 1050 (42S01) at line 30: Table 'admins' already exists
+root@aetheric-app:/var/www/aetheric8080# php artisan migrate --force
+PHP Warning:  require_once(/var/www/aetheric8080/bootstrap/app.php): Failed to open stream: No such file or directory in /var/www/aetheric8080/artisan on line 20
+PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/aetheric8080/bootstrap/app.php' (include_path='.:/usr/share/php') in /var/www/aetheric8080/artisan:20
+Stack trace:
+#0 {main}
+  thrown in /var/www/aetheric8080/artisan on line 20
+root@aetheric-app:/var/www/aetheric8080# sudo chown -R www-data:www-data /var/www/solidnew/storage /var/www/solidnew/bootstrap/cache
+chown: cannot access '/var/www/solidnew/storage': No such file or directory
+chown: cannot access '/var/www/solidnew/bootstrap/cache': No such file or directory
+root@aetheric-app:/var/www/aetheric8080# sudo chown -R www-data:www-data /var/www/aetheric8080/storage /var/www/solidnew/bootstrap/cache
+chown: cannot access '/var/www/solidnew/bootstrap/cache': No such file or directory
+root@aetheric-app:/var/www/aetheric8080# sudo chown -R www-data:www-data /var/www/aetheric8080/storage /var/www/aetheric8080/bootstrap/cache
+root@aetheric-app:/var/www/aetheric8080# sudo chmod -R 775 /var/www/aetheric8080/storage /var/www/aetheric8080/bootstrap/cache
+root@aetheric-app:/var/www/aetheric8080# php artisan storage:link
+PHP Warning:  require_once(/var/www/aetheric8080/bootstrap/app.php): Failed to open stream: No such file or directory in /var/www/aetheric8080/artisan on line 20
+PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/aetheric8080/bootstrap/app.php' (include_path='.:/usr/share/php') in /var/www/aetheric8080/artisan:20
+Stack trace:
+#0 {main}
+  thrown in /var/www/aetheric8080/artisan on line 20
+root@aetheric-app:/var/www/aetheric8080# sudo nano /etc/nginx/sites-available/aetheric8080
+root@aetheric-app:/var/www/aetheric8080# sudo ln -s /etc/nginx/sites-available/aetheric8080 /etc/nginx/sites-enabled/
+ln: failed to create symbolic link '/etc/nginx/sites-enabled/aetheric8080': File exists
+root@aetheric-app:/var/www/aetheric8080#  sudo nginx -t
+2026/03/25 13:52:09 [warn] 1775549#1775549: conflicting server name "161.97.120.209" on 0.0.0.0:80, ignored
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+root@aetheric-app:/var/www/aetheric8080# php artisan config:cache
+PHP Warning:  require_once(/var/www/aetheric8080/bootstrap/app.php): Failed to open stream: No such file or directory in /var/www/aetheric8080/artisan on line 20
+PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/aetheric8080/bootstrap/app.php' (include_path='.:/usr/share/php') in /var/www/aetheric8080/artisan:20
+Stack trace:
+#0 {main}
+  thrown in /var/www/aetheric8080/artisan on line 20
+root@aetheric-app:/var/www/aetheric8080#  php artisan route:cache
+PHP Warning:  require_once(/var/www/aetheric8080/bootstrap/app.php): Failed to open stream: No such file or directory in /var/www/aetheric8080/artisan on line 20
+PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/aetheric8080/bootstrap/app.php' (include_path='.:/usr/share/php') in /var/www/aetheric8080/artisan:20
+Stack trace:
+#0 {main}
+  thrown in /var/www/aetheric8080/artisan on line 20
+root@aetheric-app:/var/www/aetheric8080# php artisan view:cache
+PHP Warning:  require_once(/var/www/aetheric8080/bootstrap/app.php): Failed to open stream: No such file or directory in /var/www/aetheric8080/artisan on line 20
+PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/aetheric8080/bootstrap/app.php' (include_path='.:/usr/share/php') in /var/www/aetheric8080/artisan:20
+Stack trace:
+#0 {main}
+  thrown in /var/www/aetheric8080/artisan on line 20
+root@aetheric-app:/var/www/aetheric8080#

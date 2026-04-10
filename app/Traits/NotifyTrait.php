@@ -51,13 +51,15 @@ trait NotifyTrait
                         ->markdown('backend.mail.user-mail-send', ['details' => $details]);
                 }
 
-                return Mail::to($email)->send(new MailSend($details));
+                try {
+                    return Mail::to($email)->send(new MailSend($details));
+                } catch (Exception $e) {
+                    \Log::error('SMTP connection failed: ' . $e->getMessage());
+                    return false;
+                }
             }
         } catch (Exception $e) {
-
-            throw $e;
-            notify()->error('SMTP connection failed', 'Error');
-
+            \Log::error('Mail Notification Error: ' . $e->getMessage());
             return false;
         }
     }

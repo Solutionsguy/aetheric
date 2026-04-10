@@ -99,6 +99,8 @@ if (! function_exists('curl_get_file_contents')) {
         $c = curl_init();
         curl_setopt($c, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($c, CURLOPT_URL, $URL);
+        curl_setopt($c, CURLOPT_TIMEOUT, 10); // Added timeout
+        curl_setopt($c, CURLOPT_CONNECTTIMEOUT, 5); // Added connect timeout
         $contents = curl_exec($c);
         curl_close($c);
 
@@ -161,18 +163,33 @@ if (! function_exists('getLocation')) {
     function getLocation()
     {
         $clientIp = request()->ip();
-        $ip = $clientIp == '127.0.0.1' ? '103.77.188.202' : $clientIp;
+        $ip = ($clientIp == '127.0.0.1' || $clientIp == '::1') ? '103.77.188.202' : $clientIp;
 
-        $location = json_decode(curl_get_file_contents('http://ip-api.com/json/'.$ip), true);
+        $locationData = [
+            'countryCode' => 'US',
+            'country' => 'United States',
+            'query' => $ip
+        ];
 
-        $currentCountry = collect(getCountries())->first(function ($value, $key) use ($location) {
-            return $value['code'] == $location['countryCode'];
+        try {
+            $ctx = stream_context_create(['http' => ['timeout' => 2]]);
+            $response = @file_get_contents('http://ip-api.com/json/'.$ip, false, $ctx);
+            if ($response) {
+                $locationData = json_decode($response, true) ?: $locationData;
+            }
+        } catch (\Exception $e) {
+            // Fallback to default
+        }
+
+        $currentCountry = collect(getCountries())->first(function ($value, $key) use ($locationData) {
+            return $value['code'] == ($locationData['countryCode'] ?? 'US');
         });
+
         $location = [
-            'country_code' => data_get($currentCountry, 'code', 0),
-            'name' => $currentCountry['name'],
-            'dial_code' => $currentCountry['dial_code'],
-            'ip' => $location['query'] ?? [],
+            'country_code' => data_get($currentCountry, 'code', 'US'),
+            'name' => data_get($currentCountry, 'name', 'United States'),
+            'dial_code' => data_get($currentCountry, 'dial_code', '+1'),
+            'ip' => $locationData['query'] ?? $ip,
         ];
 
         return new \Illuminate\Support\Fluent($location);
